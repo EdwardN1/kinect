@@ -50,25 +50,28 @@ get_header(); ?>
 
                     <?php if ( have_rows( 'frame_1' ) ) : ?>
                         <?php while ( have_rows( 'frame_1' ) ) : the_row(); ?>
-                            <?php the_sub_field( 'heading' ); ?>
-                            <?php the_sub_field( 'description' ); ?>
                             <?php $background_image = get_sub_field( 'background_image' ); ?>
                             <?php $foreground_image = get_sub_field( 'foreground_image' ); ?>
-                            <?php if ( $foreground_image ) { ?>
-                                <img src="<?php echo $foreground_image['url']; ?>" alt="<?php echo $foreground_image['alt']; ?>" />
-                            <?php } ?>
-                            <?php $icon = get_sub_field( 'icon' ); ?>
-                            <?php if ( $icon ) { ?>
-                                <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
-                            <?php } ?>
-                            <?php $right_chevron = get_sub_field( 'right_chevron' ); ?>
-                            <?php if ( $right_chevron ) { ?>
-                                <img src="<?php echo $right_chevron['url']; ?>" alt="<?php echo $right_chevron['alt']; ?>" />
-                            <?php } ?>
-                            <?php the_sub_field( 'footer_text' ); ?>
-                            <div class="background" style="background-image: <?php echo $background_image['url']; ?>">
-
+                            <div class="background" style="background-image: url(<?php echo $background_image['url']; ?>)">
+                                <div class="foreground">
+                                    <div class="main-chevron" style="background-image: url(<?php echo $foreground_image['url']; ?>)"></div>
+                                </div>
                             </div>
+
+		                    <?php the_sub_field( 'heading' ); ?>
+		                    <?php the_sub_field( 'description' ); ?>
+		                    <?php if ( $foreground_image ) { ?>
+                                <img src="<?php echo $foreground_image['url']; ?>" alt="<?php echo $foreground_image['alt']; ?>" />
+		                    <?php } ?>
+		                    <?php $icon = get_sub_field( 'icon' ); ?>
+		                    <?php if ( $icon ) { ?>
+                                <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
+		                    <?php } ?>
+		                    <?php $right_chevron = get_sub_field( 'right_chevron' ); ?>
+		                    <?php if ( $right_chevron ) { ?>
+                                <img src="<?php echo $right_chevron['url']; ?>" alt="<?php echo $right_chevron['alt']; ?>" />
+		                    <?php } ?>
+		                    <?php the_sub_field( 'footer_text' ); ?>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 </div>
