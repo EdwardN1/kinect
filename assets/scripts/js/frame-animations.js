@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
 
     var delay = 1000;
-    var frame0Fade = 5000;
+    var frame0Fade = 1000;
 
     function fadeOut(e) {
         Foundation.Motion.animateOut($(e), 'fade-out', function () {
@@ -45,7 +45,7 @@ jQuery(document).ready(function ($) {
                setTimeout(function () {
                    slideInUp('#frame-0 .strap-line-message');
                    setTimeout(function () {
-                       //fadeOut('#frame-0');
+                       fadeOut('#frame-0');
                    },frame0Fade)
                },delay)
             },delay)
