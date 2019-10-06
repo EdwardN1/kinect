@@ -20,4 +20,21 @@ jQuery(document).ready(function ($) {
 
     $('[data-slick-slider]').slick();
 
+
+    $('.chevron-background-image, .second-section, .third-section, .fifth-section').each(function () {
+        var $e = $(this);
+
+        $e.waypoint(function (direction) {
+            if(direction=='down') {
+                if(!$e.hasClass('fixBackground')) {
+                    $e.addClass('fixBackground');
+                }
+            } else {
+                $e.removeClass('fixBackground');
+            }
+        }, {
+            offset: 0
+        });
+    });
+
 });

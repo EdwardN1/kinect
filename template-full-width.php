@@ -12,66 +12,79 @@ get_header(); ?>
         <main class="main small-12 medium-12 large-12 cell" role="main">
 
             <?php if (have_posts()) : while (have_posts()) :
-                the_post(); ?>
+                the_post();
+            ?>
+                <?php if ( have_rows( 'backgrounds' ) ) : ?>
+                <?php while ( have_rows( 'backgrounds' ) ) : the_row(); ?>
 
-                <div id="frame-0">
-
-
-                    <?php if (have_rows('frame_0')) : ?>
-                        <?php while (have_rows('frame_0')) : the_row(); ?>
-                            <?php $left_chevron = get_sub_field('left_chevron'); ?>
-                            <?php if ($left_chevron) { ?>
-                                <div class="left-chevron" style="display:none; background-image: url(<?php echo $left_chevron['url']; ?>)"></div>
+                    <?php $top_parallax_background_image = get_sub_field( 'top_parallax_background_image' ); ?>
+                    <?php if ( $top_parallax_background_image ) { ?>
+                        <div class="top_parallax_background_image" style="background-image: url(<?php echo $top_parallax_background_image['url']; ?>)">
+                            <?php $first_chevron_set = get_sub_field( 'first_chevron_set' ); ?>
+                            <?php if ( $first_chevron_set ) { ?>
+                                <?php $first_chevron_set_image = get_sub_field( 'first_chevron_set_image' ); ?>
+                                <?php if ( $first_chevron_set_image ) { ?>
+                                    <div class="chevron-background-image" style="background-image: url(<?php echo $first_chevron_set_image['url']; ?>)"></div>
+                                <?php } ?>
+                                <div class="first_chevron_set" style="background-image: url(<?php echo $first_chevron_set['url']; ?>)"></div>
                             <?php } ?>
-                            <?php $right_chevron = get_sub_field('right_chevron'); ?>
-                            <?php if ($right_chevron) { ?>
-                                <div class="right-chevron" style="display:none; background-image: url(<?php echo $right_chevron['url']; ?>)"></div>
-                            <?php } ?>
-                            <?php $logo = get_sub_field('logo'); ?>
-                            <?php if ($logo) { ?>
-                                <div class="logo" style="display: none;"><img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/></div>
-
-                            <?php } ?>
-                            <?php $strap_line_image = get_sub_field('strap_line_image'); ?>
-                            <?php if ($strap_line_image) { ?>
-                                <div class="strap-line-message" style="display: none;"><img src="<?php echo $strap_line_image['url']; ?>" alt="<?php echo $strap_line_image['alt']; ?>"/></div>
-
-                            <?php } ?>
-
-
-
-
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-
-                </div>
-
-                <div id="frame-1">
-
-                    <?php if ( have_rows( 'frame_1' ) ) : ?>
-                        <?php while ( have_rows( 'frame_1' ) ) : the_row(); ?>
-                            <?php the_sub_field( 'heading' ); ?>
-                            <?php the_sub_field( 'description' ); ?>
-                            <?php $background_image = get_sub_field( 'background_image' ); ?>
-                            <?php $foreground_image = get_sub_field( 'foreground_image' ); ?>
-                            <?php if ( $foreground_image ) { ?>
-                                <img src="<?php echo $foreground_image['url']; ?>" alt="<?php echo $foreground_image['alt']; ?>" />
-                            <?php } ?>
-                            <?php $icon = get_sub_field( 'icon' ); ?>
-                            <?php if ( $icon ) { ?>
-                                <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
-                            <?php } ?>
-                            <?php $right_chevron = get_sub_field( 'right_chevron' ); ?>
-                            <?php if ( $right_chevron ) { ?>
-                                <img src="<?php echo $right_chevron['url']; ?>" alt="<?php echo $right_chevron['alt']; ?>" />
-                            <?php } ?>
-                            <?php the_sub_field( 'footer_text' ); ?>
-                            <div class="background" style="background-image: <?php echo $background_image['url']; ?>">
-
+                        </div>
+                        <?php $second_section_background_image = get_sub_field( 'second_section_background_image' ); ?>
+                        <?php if ( $second_section_background_image ) { ?>
+                            <div class="second-section" style="background-image: url(<?php echo $second_section_background_image['url']; ?>)">
+                                <?php $second_section_gradient_chevron = get_sub_field( 'second_section_gradient_chevron' ); ?>
+                                <?php if ( $second_section_gradient_chevron ) { ?>
+                                    <div class="second_section_gradient_chevron" style="background-image: url(<?php echo $second_section_gradient_chevron['url']; ?>)"></div>
+                                <?php } ?>
                             </div>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </div>
+                        <?php } ?>
+                    <?php } ?>
+
+                    <?php $third_section_background_image = get_sub_field( 'third_section_background_image' ); ?>
+                    <?php if ( $third_section_background_image ) { ?>
+                        <div class="third-section" style="background-image: url(<?php echo $third_section_background_image['url']; ?>)">
+                            <?php $third_section_chevrons = get_sub_field( 'third_section_chevrons' ); ?>
+                            <?php if ( $third_section_chevrons ) { ?>
+                                <div class="third_section_chevrons" style="background-image: url(<?php echo $third_section_chevrons['url']; ?>)"></div>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+
+                    <?php $forth_section_chevrons = get_sub_field( 'forth_section_chevrons' ); ?>
+                    <?php if ( $forth_section_chevrons ) { ?>
+                        <div class="forth-section" style="background-image: url(<?php echo $forth_section_chevrons['url']; ?>)">
+
+                        </div>
+                    <?php } ?>
+
+                    <?php $fifth_section_background_image = get_sub_field( 'fifth_section_background_image' ); ?>
+                    <?php if ( $fifth_section_background_image ) { ?>
+                        <div class="fifth-section" style="background-image: url(<?php echo $fifth_section_background_image['url']; ?>)">
+                            <?php $fifth_section_chevron = get_sub_field( 'fifth_section_chevron' ); ?>
+                            <?php if ( $fifth_section_chevron ) { ?>
+                                <div class="fifth-section-cheveron" style="background-image: url(<?php echo $fifth_section_chevron['url']; ?>)">
+
+                                </div>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+
+                    <?php $sixth_section_chevrons = get_sub_field( 'sixth_section_chevrons' ); ?>
+                    <?php if ( $sixth_section_chevrons ) { ?>
+                        <div class="sixth-section" style="background-image: url(<?php echo $sixth_section_chevrons['url']; ?>)">
+
+                        </div>
+                    <?php } ?>
+
+                    <?php $seventh_section_chevrons = get_sub_field( 'seventh_section_chevrons' ); ?>
+                    <?php if ( $seventh_section_chevrons ) { ?>
+                        <div class="seventh-section" style="background-image: url(<?php echo $seventh_section_chevrons['url']; ?>)">
+
+                        </div>
+                    <?php } ?>
+                <!--<div style="height: 1000px; width: 100%;"></div>-->
+                <?php endwhile; ?>
+            <?php endif; ?>
 
             <?php endwhile;
             endif; ?>
