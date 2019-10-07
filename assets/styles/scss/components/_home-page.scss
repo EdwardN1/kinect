@@ -1,10 +1,124 @@
+.placement {
+  position: relative;
+}
+.light-blue-background {
+  background-color: $light-blue;
+}
+.backdrop_parallax_background_image {
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 1600px 1060px;
+  width: 100%;
+  height: 1060px;
+  max-height: 1060px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  @include breakpoint(1600px) {
+    background-size: 100vw 66.25vw;
+  }
+}
+
+.admin-bar {
+  .backdrop_parallax_background_image {
+    top: 32px;
+  }
+}
+
+.first-section {
+  position: relative;
+  .top {
+    height: 767px;
+    width: 100%;
+  }
+  .bottom {
+    height: 293px;
+    width: 104%;
+    background-color: $light-blue;
+    margin-left: -1px;
+  }
+  .side {
+    height: 476px;
+    width: 104%;
+    background-color: $light-blue;
+    margin-left: -1px;
+  }
+  .top, .bottom, .side {
+    display: none;
+    @include breakpoint(1600) {
+      display: block;
+    }
+  }
+  .top-chevrons {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 1600px 1060px;
+    max-width: 100vw;
+    width: 1600px;
+    height: 1060px;
+    padding-top: 234px;
+    .first-section-container {
+      width: 682px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      position: relative;
+      .heading {
+        color: white;
+        font-size: 48px;
+        font-weight: $font-semi-bold;
+        line-height: 1;
+        padding-top: 28px;
+      }
+      .strap-line {
+        color: $white;
+        font-size: 21px;
+        line-height: 1.2;
+        font-weight: $font-light;
+      }
+      .white-chevron {
+        position: absolute;
+        left: 64.223vw;
+        top: 97px;
+        @include breakpoint(682) {
+          left: 438px;
+        }
+      }
+    }
+  }
+  .bottom-image {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 1600px 476px;
+    max-width: 100vw;
+    width: 1600px;
+    height: 476px;
+    &.fixBackground {
+      background-attachment: fixed;
+      background-position: top center;
+      /*@include breakpoint(1600) {
+        background-size: 100vw 29.75vw;
+      }*/
+    }
+    .bottom-chevrons {
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: 1600px 476px;
+      max-width: 100vw;
+      width: 1600px;
+      height: 476px;
+    }
+  }
+}
+
 .top_parallax_background_image {
   background-attachment: fixed;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 1600px 1060px;
   width: 100%;
-  height: 96.063vw;
+  //height: 96.063vw;
   margin-left: auto;
   margin-right: auto;
   min-height: 1537px;
@@ -17,7 +131,7 @@
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 29.85vw;
+    //height: 29.85vw;
     min-height: 476px;
     background-size: 1600px 476px;
     background-position: top center;
@@ -34,18 +148,39 @@
     }
 
   }
+  .top {
+    width: 100%;
+    height: 768px;
+  }
+  .bottom {
+    width: 100%;
+    height: 768px;
+    background-color: $light-blue;
+    position: relative;
+    z-index: 1;
+  }
   .first_chevron_set {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    height: 96.063vw;
+    //height: 96.063vw;
     min-height: 1537px;
     background-size: 1600px 1537px;
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
+    max-width: 100vw;
+    width: 1600px;
     @include breakpoint(1600) {
-      background-size: cover;
+      //background-size: cover;
+    }
+    .right-arrow {
+      position: absolute;
+      top: 332px;
+      left: 56%;
+      @include breakpoint(1600) {
+        left: 56%;
+      }
     }
   }
 }
