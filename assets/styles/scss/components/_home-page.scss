@@ -271,6 +271,22 @@
         font-weight: $font-light;
         font-size: 21px;
         line-height: 1.2;
+        ul {
+          line-height: 1.2;
+          li {
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .icons {
+        .icon {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          display: none;
+          &.active {
+            display: block;
+          }
+        }
       }
     }
 

@@ -200,7 +200,10 @@ get_header(); ?>
                                             <?php echo $forth_section_heading; ?>
                                         </div>
                                         <div class="icons">
-
+                                            <div class="contrats active icon"><img src="<?php echo $forth_section_contracts_icons['url'];?>" /></div>
+                                            <div class="veille icon"><img src="<?php echo $forth_section_veille_icons['url'];?>" /></div>
+                                            <div class="consommations icon"><img src="<?php echo $forth_section_consomations_icons['url'];?>" /></div>
+                                            <div class="donnees icon"><img src="<?php echo $forth_section_dommees_icons['url'];?>" /></div>
                                         </div>
                                         <div class="bullets">
                                             <?php echo $forth_section_bullet_content; ?>
