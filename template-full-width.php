@@ -225,7 +225,7 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-
+                        <div class="suivant" style="background-image: url(<?php echo $forth_section_suivant_arrow['url']; ?>)"></div>
                     </div>
                 </div>
 
