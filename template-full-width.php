@@ -37,7 +37,7 @@ get_header(); ?>
         <?php $forth_section_veille_icons = get_sub_field('forth_section_veille_icons'); ?>
         <?php $forth_section_contracts_pizza = get_sub_field('forth_section_contracts_pizza'); ?>
         <?php $forth_section_donnees_pizza = get_sub_field('forth_section_donnees_pizza'); ?>
-        <?php $forth_section_consommations_pizza_ = get_sub_field('forth_section_consommations_pizza_'); ?>
+        <?php $forth_section_consommations_pizza = get_sub_field('forth_section_consommations_pizza_'); ?>
         <?php $forth_section_veille_pizza = get_sub_field('forth_section_veille_pizza'); ?>
         <?php $forth_section_chart_arrow = get_sub_field('forth_section_chart_arrow'); ?>
         <?php $forth_section_chart_panel_1 = get_sub_field('forth_section_chart_panel_1'); ?>
@@ -124,6 +124,8 @@ get_header(); ?>
                                         <div class="white-chevron"><img class="right-arrow" src="<?php echo $first_section_white_arrow['url']; ?>"
                                                                         alt="<?php echo $first_section_white_arrow['alt']; ?>"/></div>
                                     </div>
+                                    <div class="sub-heading"><?php echo $first_section_sub_heading; ?></div>
+
                                 </div>
                             </div>
                         </div>
@@ -139,6 +141,9 @@ get_header(); ?>
                         <div class="cell shrink light-blue-background">
                             <div class="bottom-image" style="background-image: url(<?php echo $first_chevron_set_image['url']; ?>)">
                                 <div class="bottom-chevrons" style="background-image: url(<?php echo $first_section_bottom_chevron_set ['url']; ?>)">
+                                    <div class="grid-container">
+                                        <div class="content"><?php echo $first_section_content; ?></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -148,202 +153,78 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <?php if (have_rows('backgrounds')) : ?>
-                <?php while (have_rows('backgrounds')) : the_row(); ?>
-
-
-                    <?php $top_parallax_background_image = get_sub_field('top_parallax_background_image'); ?>
-                    <?php if ($top_parallax_background_image) { ?>
-
-                        <div class="top_parallax_background_image" style="background-image: url(<?php //echo $top_parallax_background_image['url']; ?>)">
-                            <?php $first_chevron_set = get_sub_field('first_chevron_set'); ?>
-                            <?php if ($first_chevron_set) { ?>
-                                <?php $first_chevron_set_image = get_sub_field('first_chevron_set_image'); ?>
-                                <?php if ($first_chevron_set_image) { ?>
-                                    <div class="chevron-background-image" style="background-image: url(<?php echo $first_chevron_set_image['url']; ?>)"></div>
-                                <?php } ?>
+                <div class="second-section">
+                    <div class="background-image" style="background-image: url(<?php echo $second_section_background_image['url']; ?>)">
+                        <div class="gradient-chevron" style="background-image: url(<?php echo $second_section_gradient_chevron['url']; ?>)">
+                            <div class="grid-container">
                                 <div class="grid-x">
-                                    <div class="cell auto">
-                                        <div class="top"></div>
-                                        <div class="bottom"></div>
-                                    </div>
-                                    <div class="cell shrink">
-                                        <div class="first_chevron_set" style="background-image: url(<?php echo $first_chevron_set['url']; ?>)">
-                                            <?php if ($first_section_graph) { ?>
-                                                <img class="graph" src="<?php echo $first_section_graph['url']; ?>" alt="<?php echo $first_section_graph['alt']; ?>"/>
-                                            <?php } ?>
-                                            <?php if ($first_section_white_arrow) { ?>
-                                                <img class="right-arrow" src="<?php echo $first_section_white_arrow['url']; ?>" alt="<?php echo $first_section_white_arrow['alt']; ?>"/>
-                                            <?php } ?>
-                                            <div class="grid-container"><?php echo $first_section_heading; ?></div>
-                                            <div class="grid-container"><?php echo $first_section_strapline; ?></div>
-                                            <div class="grid-container"><?php echo $first_section_sub_heading; ?></div>
-                                            <div class="grid-container"><?php echo $first_section_content; ?></div>
+                                    <div class="cell large-6 medium-6 small-6"></div>
+                                    <div class="cell large-6 medium-6 small-6">
+                                        <div class="heading">
+                                            <?php echo $second_section_heading; ?>
+                                        </div>
+                                        <div class="content">
+                                            <?php echo $second_section_content; ?>
                                         </div>
                                     </div>
-                                    <div class="cell auto">
-                                        <div class="top"></div>
-                                        <div class="bottom"></div>
-                                    </div>
                                 </div>
-                            <?php } ?>
-                        </div>
-                        <?php $second_section_background_image = get_sub_field('second_section_background_image'); ?>
-                        <?php if ($second_section_background_image) { ?>
-                            <div class="second-section" style="background-image: url(<?php echo $second_section_background_image['url']; ?>)">
-                                <?php $second_section_gradient_chevron = get_sub_field('second_section_gradient_chevron'); ?>
-                                <?php if ($second_section_gradient_chevron) { ?>
-                                    <div class="second_section_gradient_chevron" style="background-image: url(<?php echo $second_section_gradient_chevron['url']; ?>)">
-                                        <div class="grid-container"><?php echo $second_section_heading; ?></div>
-                                        <div class="grid-container"><?php echo $second_section_content; ?></div>
-                                    </div>
-                                <?php } ?>
                             </div>
-                        <?php } ?>
-                    <?php } ?>
+                        </div>
+                    </div>
+                </div>
 
-                    <?php $third_section_background_image = get_sub_field('third_section_background_image'); ?>
-                    <?php if ($third_section_background_image) { ?>
-                        <div class="third-section" style="background-image: url(<?php echo $third_section_background_image['url']; ?>)">
-                            <?php $third_section_chevrons = get_sub_field('third_section_chevrons'); ?>
-                            <?php if ($third_section_chevrons) { ?>
-                                <div class="third_section_chevrons" style="background-image: url(<?php echo $third_section_chevrons['url']; ?>)">
-                                    <div class="grid-container"><?php echo $third_section_heading; ?></div>
-                                    <div class="grid-container"><?php echo $third_section_content; ?></div>
+
+                <div class="third-section">
+                    <div class="background-image" style="background-image: url(<?php echo $third_section_background_image['url']; ?>)">
+                        <div class="chevrons" style="background-image: url(<?php echo $third_section_chevrons['url']; ?>)">
+                            <div class="grid-container">
+                                <div class="heading">
+                                    <?php echo $third_section_heading; ?>
                                 </div>
-                            <?php } ?>
-                        </div>
-                    <?php } ?>
-
-                    <?php $forth_section_chevrons = get_sub_field('forth_section_chevrons'); ?>
-                    <?php if ($forth_section_chevrons) { ?>
-                        <div class="forth-section" style="background-image: url(<?php echo $forth_section_chevrons['url']; ?>)">
-                            <div class="grid-container"><?php echo $forth_section_heading; ?></div>
-                            <div class="grid-container"><?php echo $forth_section_bullet_content; ?></div>
-                            <div class="grid-container"><?php echo $forth_section_checkmark_content; ?></div>
-
-                            <?php if ($forth_section_contracts_icons) { ?>
-                                <img src="<?php echo $forth_section_contracts_icons['url']; ?>" alt="<?php echo $forth_section_contracts_icons['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_consomations_icons) { ?>
-                                <img src="<?php echo $forth_section_consomations_icons['url']; ?>" alt="<?php echo $forth_section_consomations_icons['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_dommees_icons) { ?>
-                                <img src="<?php echo $forth_section_dommees_icons['url']; ?>" alt="<?php echo $forth_section_dommees_icons['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_veille_icons) { ?>
-                                <img src="<?php echo $forth_section_veille_icons['url']; ?>" alt="<?php echo $forth_section_veille_icons['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_contracts_pizza) { ?>
-                                <img src="<?php echo $forth_section_contracts_pizza['url']; ?>" alt="<?php echo $forth_section_contracts_pizza['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_donnees_pizza) { ?>
-                                <img src="<?php echo $forth_section_donnees_pizza['url']; ?>" alt="<?php echo $forth_section_donnees_pizza['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_consommations_pizza_) { ?>
-                                <img src="<?php echo $forth_section_consommations_pizza_['url']; ?>" alt="<?php echo $forth_section_consommations_pizza_['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_veille_pizza) { ?>
-                                <img src="<?php echo $forth_section_veille_pizza['url']; ?>" alt="<?php echo $forth_section_veille_pizza['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_arrow) { ?>
-                                <img src="<?php echo $forth_section_chart_arrow['url']; ?>" alt="<?php echo $forth_section_chart_arrow['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_panel_1) { ?>
-                                <img src="<?php echo $forth_section_chart_panel_1['url']; ?>" alt="<?php echo $forth_section_chart_panel_1['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_panel_2) { ?>
-                                <img src="<?php echo $forth_section_chart_panel_2['url']; ?>" alt="<?php echo $forth_section_chart_panel_2['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_panel_3) { ?>
-                                <img src="<?php echo $forth_section_chart_panel_3['url']; ?>" alt="<?php echo $forth_section_chart_panel_3['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_panel_4) { ?>
-                                <img src="<?php echo $forth_section_chart_panel_4['url']; ?>" alt="<?php echo $forth_section_chart_panel_4['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_panel_5) { ?>
-                                <img src="<?php echo $forth_section_chart_panel_5['url']; ?>" alt="<?php echo $forth_section_chart_panel_5['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_panel_6) { ?>
-                                <img src="<?php echo $forth_section_chart_panel_6['url']; ?>" alt="<?php echo $forth_section_chart_panel_6['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_panel_7) { ?>
-                                <img src="<?php echo $forth_section_chart_panel_7['url']; ?>" alt="<?php echo $forth_section_chart_panel_7['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_chart_panel_8) { ?>
-                                <img src="<?php echo $forth_section_chart_panel_8['url']; ?>" alt="<?php echo $forth_section_chart_panel_8['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_budget_circle) { ?>
-                                <img src="<?php echo $forth_section_budget_circle['url']; ?>" alt="<?php echo $forth_section_budget_circle['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_suivant_arrow) { ?>
-                                <img src="<?php echo $forth_section_suivant_arrow['url']; ?>" alt="<?php echo $forth_section_suivant_arrow['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($forth_section_circular_arrows) { ?>
-                                <img src="<?php echo $forth_section_circular_arrows['url']; ?>" alt="<?php echo $forth_section_circular_arrows['alt']; ?>"/>
-                            <?php } ?>
-
-                        </div>
-                    <?php } ?>
-
-                    <?php $fifth_section_background_image = get_sub_field('fifth_section_background_image'); ?>
-                    <?php if ($fifth_section_background_image) { ?>
-                        <div class="fifth-section" style="background-image: url(<?php echo $fifth_section_background_image['url']; ?>)">
-                            <?php $fifth_section_chevron = get_sub_field('fifth_section_chevron'); ?>
-                            <?php if ($fifth_section_chevron) { ?>
-                                <div class="fifth-section-cheveron" style="background-image: url(<?php echo $fifth_section_chevron['url']; ?>)">
-
-                                    <div class="grid-container"><?php echo $fifth_section_heading; ?></div>
-                                    <div class="grid-container"><?php echo $fifth_section_content; ?></div>
-
+                                <div class="content">
+                                    <?php echo $third_section_content; ?>
                                 </div>
-                            <?php } ?>
+                            </div>
                         </div>
-                    <?php } ?>
+                    </div>
+                </div>
 
-                    <?php $sixth_section_chevrons = get_sub_field('sixth_section_chevrons'); ?>
-                    <?php if ($sixth_section_chevrons) { ?>
-                        <div class="sixth-section" style="background-image: url(<?php echo $sixth_section_chevrons['url']; ?>)">
+                <div class="forth-section">
+                    <div class="background-image" style="background-image: url(<?php echo $forth_section_chevrons['url']; ?>)">
 
-                            <div class="grid-container"><?php echo $sixth_section_heading; ?></div>
-                            <div class="grid-container"><?php echo $sixth_section_strapline; ?></div>
-                            <div class="grid-container"><?php echo $sixth_section_bullet_points; ?></div>
-                            <div class="grid-container"><?php echo $sixth_section_youtube_link; ?></div>
-                            <div class="grid-container"><?php echo $sixth_section_gravity_form_id; ?></div>
+                        <div class="grid-container">
+                            <div class="grid-x">
+                                <div class="cell shrink">
+                                    <div class="left">
+                                        <div class="heading">
+                                            <?php echo $forth_section_heading; ?>
+                                        </div>
+                                        <div class="icons">
 
-                            <?php if ($sixth_section_green_arrow) { ?>
-                                <img src="<?php echo $sixth_section_green_arrow['url']; ?>" alt="<?php echo $sixth_section_green_arrow['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($sixth_section_left_blue_arrow) { ?>
-                                <img src="<?php echo $sixth_section_left_blue_arrow['url']; ?>" alt="<?php echo $sixth_section_left_blue_arrow['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($sixth_section_right_blue_arrow) { ?>
-                                <img src="<?php echo $sixth_section_right_blue_arrow['url']; ?>" alt="<?php echo $sixth_section_right_blue_arrow['alt']; ?>"/>
-                            <?php } ?>
+                                        </div>
+                                        <div class="bullets">
+                                            <?php echo $forth_section_bullet_content; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" cell auto">
+                                    <div class="right">
+                                        <div class="pizza-box">
+                                            <div class="pizza">
+                                                <div class="contrats slice"><img src="<?php echo $forth_section_contracts_pizza['url']; ?>"/></div>
+                                                <div class="donnees slice"><img src="<?php echo $forth_section_donnees_pizza['url']; ?>"/></div>
+                                                <div class="consommations slice"><img src="<?php echo $forth_section_consommations_pizza['url']; ?>"/></div>
+                                                <div class="veille slice"><img src="<?php echo $forth_section_veille_pizza['url']; ?>"/></div>
+                                            </div>
+                                            <div class="budget"><img src="<?php echo $forth_section_budget_circle['url']; ?>"/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    <?php } ?>
 
-                    <?php $seventh_section_chevrons = get_sub_field('seventh_section_chevrons'); ?>
-                    <?php if ($seventh_section_chevrons) { ?>
-                        <div class="seventh-section" style="background-image: url(<?php echo $seventh_section_chevrons['url']; ?>)">
-
-                            <div class="grid-container"><?php echo $seventh_section_line_one; ?></div>
-                            <div class="grid-container"><?php echo $seventh_section_line_two; ?></div>
-                            <div class="grid-container"><?php echo $seventh_section_line_three; ?></div>
-                            <div class="grid-container"><?php echo 'Link List'; ?></div>
-                            <div class="grid-container"><?php echo $seventh_section_footer_text; ?></div>
-
-                            <?php if ($seventh_section_right_blue_arrow) { ?>
-                                <img src="<?php echo $seventh_section_right_blue_arrow['url']; ?>" alt="<?php echo $seventh_section_right_blue_arrow['alt']; ?>"/>
-                            <?php } ?>
-                            <?php if ($seventh_section_logo) { ?>
-                                <img src="<?php echo $seventh_section_logo['url']; ?>" alt="<?php echo $seventh_section_logo['alt']; ?>"/>
-                            <?php } ?>
-                        </div>
-                    <?php } ?>
-                    <!--<div style="height: 1000px; width: 100%;"></div>-->
-                <?php endwhile; ?>
-            <?php endif; ?>
+                    </div>
+                </div>
 
             <?php endwhile;
             endif; ?>

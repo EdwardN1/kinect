@@ -21,7 +21,7 @@ jQuery(document).ready(function ($) {
     $('[data-slick-slider]').slick();
 
 
-    $('.chevron-background-image, .second-section, .third-section, .fifth-section, .first-section .bottom-image').each(function () {
+    $('.first-section .bottom-image, .second-section .background-image, .third-section .background-image').each(function () {
         var $e = $(this);
 
         $e.waypoint(function (direction) {
