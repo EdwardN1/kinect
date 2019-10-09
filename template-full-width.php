@@ -250,27 +250,69 @@ get_header(); ?>
                         <div class="grid-x">
                             <div class="cell auto"></div>
                             <div class="cell shrink">
-                            <div class="chevrons" style="background-image: url(<?php echo $fifth_section_chevron['url']; ?>)">
-                                <div class="heading"><?php echo $fifth_section_heading; ?></div>
-                                <div class="content"><?php echo $fifth_section_content; ?></div>
-                            </div>
+                                <div class="chevrons" style="background-image: url(<?php echo $fifth_section_chevron['url']; ?>)">
+                                    <div class="heading"><?php echo $fifth_section_heading; ?></div>
+                                    <div class="content"><?php echo $fifth_section_content; ?></div>
+                                </div>
                             </div>
                             <div class="cell auto" style="background-color: #bfebfb;"></div>
                         </div>
                     </div>
                 </div>
 
-            <div class="sixth-section">
-                <div class="chevrons" style="background-image: url(<?php echo $sixth_section_chevrons['url']; ?>)">
+                <div class="sixth-section">
+                    <div class="chevrons" style="background-image: url(<?php echo $sixth_section_chevrons['url']; ?>)">
+                        <div class="top">
 
+
+                            <div class="grid-container">
+                                <div class="heading">
+                                    <?php echo $sixth_section_heading; ?>
+                                </div>
+                                <div class="grid-x">
+                                    <div class="cell large-4">
+                                        <div class="sub-heading">
+                                            <?php echo $sixth_section_strapline; ?>
+                                        </div>
+                                        <div class="bullets">
+                                            <?php echo $sixth_section_bullet_points; ?>
+                                        </div>
+
+                                    </div>
+                                    <div class="cell large-8">
+                                        <div class="video">
+                                            <div class="shadow">
+                                                <iframe src="https://player.vimeo.com/video/189937619?color=ffffff&title=0&byline=0&portrait=0" width="542" height="305" frameborder="0"
+                                                        allow="autoplay; fullscreen"
+                                                        allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="middle">
+                            <div class="newsroom">
+
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="grid-container">
+                                <div class="form">
+                                    <?php gravity_form(1, true, true, true, '', true, 12); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="seventh-section">
-                <div class="chevrons" style="background-image: url(<?php echo $seventh_section_chevrons['url']; ?>)">
+                <div class="seventh-section">
+                    <div class="chevrons" style="background-image: url(<?php echo $seventh_section_chevrons['url']; ?>)">
 
+
+                    </div>
                 </div>
-            </div>
 
             <?php endwhile;
             endif; ?>

@@ -302,7 +302,74 @@
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
-    height: 2017px;
+    min-height: 2017px;
+    .top {
+      padding-top: 90px;
+      padding-left: 5.125vw;
+      @include breakpoint(1600) {
+        padding-left: 82px;
+      }
+      .heading {
+        font-size: 60px;
+        font-weight: $font-thin;
+        color: $dark-blue;
+        line-height: 1;
+      }
+      .sub-heading {
+        padding-top: 25px;
+        font-size: 21px;
+        line-height: 1.2;
+        color: $dark-blue;
+        font-weight: $font-light;
+      }
+      .bullets, .bullets ul, .bullets ul li {
+        font-size: 21px;
+        font-weight: $font-light;
+        color: $dark-gray;
+        line-height: 1.2;
+      }
+      .bullets {
+        padding-top: 60px;
+        ul {
+          list-style: none;
+        }
+
+        ul {
+          margin-left: -16px;
+          li {
+            position: relative;
+            padding-left: 2em;
+            margin-bottom: 1em;
+            background-image: url("/wp-content/uploads/2019/10/Frame008-Video-Title-Arrow-CROPPED.svg");
+            background-repeat: no-repeat;
+            background-position: 0 4px;
+            background-size: 12px 20px;
+            &:first-child {
+              color: $dark-blue;
+            }
+            &:nth-child(2) {
+              margin-left: 60px;
+            }
+            &:nth-child(3) {
+              margin-left: 120px;
+            }
+          }
+        }
+      }
+      .video {
+        padding-top: 26px;
+        padding-right: 8.75vw;
+        padding-left: 5.625vw;
+        @include breakpoint(1600){
+          padding-right: 140px;
+          padding-left: 90px;
+        }
+        .shadow {
+          box-shadow: 5px 5px 14px #00719c;
+        }
+
+      }
+    }
   }
 }
 
