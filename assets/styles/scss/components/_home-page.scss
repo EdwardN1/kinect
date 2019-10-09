@@ -239,6 +239,88 @@
   }
 }
 
+.fifth-section {
+  position: relative;
+  .background-image {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 1600px 768px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 768px;
+
+    @include breakpoint(1600) {
+      background-size: 100vw 48vw;
+    }
+
+    &.fixBackground {
+      background-attachment: fixed;
+    }
+
+    .chevrons {
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: 1600px 768px;
+      width: 100vw;
+      height: 768px;
+      max-width: 1600px;
+      margin-left: auto;
+      margin-right: auto;
+      .heading {
+        color: $dark-blue;
+        font-size: 60px;
+        line-height: 1;
+        font-weight: $font-thin;
+        padding-top: 65px;
+        padding-left: 50%;
+      }
+
+      .content {
+        padding-top: 30px;
+        padding-left: 50%;
+      }
+
+      .content, .content p {
+        color: $dark-blue;
+        font-size: 21px;
+        line-height: 1.2;
+        font-weight: $font-light;
+      }
+    }
+  }
+}
+
+.sixth-section {
+  position: relative;
+  background: $white;
+  .chevrons {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 1600px 2017px;
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2017px;
+  }
+}
+
+.seventh-section {
+  position: relative;
+  background: $white;
+  .chevrons {
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 1600px 768px;
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 768px;
+  }
+}
+
 .forth-section {
   position: relative;
   background: $white;
@@ -260,29 +342,44 @@
     .left {
       padding-top: 90px;
       max-width: 390px;
+
       .heading {
         color: $dark-blue;
         font-weight: $font-thin;
         font-size: 60px;
         line-height: 1;
       }
+
       .bullets {
         color: $grey;
         font-weight: $font-light;
         font-size: 21px;
         line-height: 1.2;
+
         ul {
           line-height: 1.2;
+
           li {
             margin-bottom: 10px;
           }
         }
       }
+
       .icons {
+        min-height: 125px;
+
         .icon {
           padding-top: 20px;
           padding-bottom: 20px;
+          max-height: 85px;
           display: none;
+          transition: opacity 0.15s ease;
+          opacity: 1;
+
+          &.faded {
+            opacity: 0;
+          }
+
           &.active {
             display: block;
           }
@@ -293,6 +390,7 @@
     .right {
       padding-top: 110px;
       padding-left: 115px;
+
       .pizza-box {
         position: relative;
         width: 550px;
@@ -301,28 +399,114 @@
           width: 550px;
           height: 550px;
           position: relative;
-          transition: transform 0.3s ease;
+
+          &.animation {
+            transition: transform 0.3s ease;
+          }
+
+          $slice-opacity: 0.7;
+
+          .contrats {
+            opacity: 1;
+          }
+
+          .donnees {
+            opacity: $slice-opacity;
+          }
+
+          .consommations {
+            opacity: $slice-opacity;
+          }
+
+          .veille {
+            opacity: $slice-opacity;
+          }
 
           &.rotate-one {
             transform: rotate(90deg);
+
+            .contrats {
+              opacity: $slice-opacity;
+            }
+
+            .donnees {
+              opacity: $slice-opacity;
+            }
+
+            .consommations {
+              opacity: $slice-opacity;
+            }
+
+            .veille {
+              opacity: 1;
+            }
           }
 
           &.rotate-two {
             transform: rotate(180deg);
+
+            .contrats {
+              opacity: $slice-opacity;
+            }
+
+            .donnees {
+              opacity: $slice-opacity;
+            }
+
+            .consommations {
+              opacity: 1;
+            }
+
+            .veille {
+              opacity: $slice-opacity;
+            }
           }
 
           &.rotate-three {
             transform: rotate(270deg);
+
+            .contrats {
+              opacity: $slice-opacity;
+            }
+
+            .donnees {
+              opacity: 1;
+            }
+
+            .consommations {
+              opacity: $slice-opacity;
+            }
+
+            .veille {
+              opacity: $slice-opacity;
+            }
           }
 
           &.rotate-four {
             transform: rotate(360deg);
+
+            .contrats {
+              opacity: 1;
+            }
+
+            .donnees {
+              opacity: $slice-opacity;
+            }
+
+            .consommations {
+              opacity: $slice-opacity;
+            }
+
+            .veille {
+              opacity: $slice-opacity;
+            }
           }
 
           .slice {
             position: absolute;
             width: 265px;
             height: 265px;
+            transition: opacity 0.3s ease;
           }
 
           .contrats {
@@ -351,20 +535,107 @@
           left: 175px;
           top: 160px;
         }
-
-        &:hover {
-          .pizza {
-            transform: rotate(90deg);
-          }
-        }
       }
     }
+
     .suivant {
       height: 91px;
       width: 100%;
       background-position: top center;
       background-repeat: no-repeat;
       background-size: 1600px 91px;
+      margin-left: -55px;
+      margin-top: -22px;
+
+    }
+  }
+
+  .chart {
+    max-width: 920px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    > div {
+      position: absolute;
+    }
+
+    @include breakpoint(920) {
+      .panel-1 {
+        top: 88px;
+        left: 0;
+      }
+      .panel-2 {
+        top: 88px;
+        left: 285px;
+      }
+      .panel-3 {
+        top: 88px;
+        left: 570px;
+      }
+      .panel-4 {
+        top: 220px;
+        left: 760px;
+      }
+      .panel-5 {
+        top: 353px;
+        left: 760px;
+      }
+      .panel-6 {
+        top: 485px;
+        left: 570px;
+      }
+      .panel-7 {
+        top: 353px;
+        left: 380px;
+      }
+      .panel-8 {
+        top: 220px;
+        left: 380px;
+      }
+      .chart-circle {
+        top: 127px;
+        left: 445px;
+      }
+      .panel-arrow-1 {
+        top: 123px;
+        left: 201px;
+      }
+      .panel-arrow-2 {
+        top: 123px;
+        left: 486px;
+      }
+      .content {
+        left: 0;
+        top: 456px;
+
+        ul, p, li {
+          font-size: 21px;
+          line-height: 1.2;
+          font-weight: $font-bold;
+          color: $dark-blue;
+          max-width: 351px;
+        }
+
+        ul {
+          list-style: none;
+        }
+
+        ul {
+          li {
+            position: relative;
+            padding-left: 1em;
+            margin-bottom: 1em;
+            &:before {
+              position: absolute;
+              top: 0;
+              left: 0;
+              content: '✓';
+            }
+          }
+        }
+      }
     }
   }
 }

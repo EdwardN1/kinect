@@ -200,10 +200,10 @@ get_header(); ?>
                                             <?php echo $forth_section_heading; ?>
                                         </div>
                                         <div class="icons">
-                                            <div class="contrats active icon"><img src="<?php echo $forth_section_contracts_icons['url'];?>" /></div>
-                                            <div class="veille icon"><img src="<?php echo $forth_section_veille_icons['url'];?>" /></div>
-                                            <div class="consommations icon"><img src="<?php echo $forth_section_consomations_icons['url'];?>" /></div>
-                                            <div class="donnees icon"><img src="<?php echo $forth_section_dommees_icons['url'];?>" /></div>
+                                            <div class="contrats active icon"><img src="<?php echo $forth_section_contracts_icons['url']; ?>"/></div>
+                                            <div class="veille faded icon"><img src="<?php echo $forth_section_veille_icons['url']; ?>"/></div>
+                                            <div class="consommations faded icon"><img src="<?php echo $forth_section_consomations_icons['url']; ?>"/></div>
+                                            <div class="donnees faded icon"><img src="<?php echo $forth_section_dommees_icons['url']; ?>"/></div>
                                         </div>
                                         <div class="bullets">
                                             <?php echo $forth_section_bullet_content; ?>
@@ -226,8 +226,51 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="suivant" style="background-image: url(<?php echo $forth_section_suivant_arrow['url']; ?>)"></div>
+                        <div class="chart">
+                            <div class="chart-circle"><img src="<?php echo $forth_section_circular_arrows['url'] ?>"></div>
+                            <div class="panel-1"><img src="<?php echo $forth_section_chart_panel_1['url'] ?>"></div>
+                            <div class="panel-arrow-1"><img src="<?php echo $forth_section_chart_arrow['url'] ?>"></div>
+                            <div class="panel-2"><img src="<?php echo $forth_section_chart_panel_2['url'] ?>"></div>
+                            <div class="panel-arrow-2"><img src="<?php echo $forth_section_chart_arrow['url'] ?>"></div>
+                            <div class="panel-3"><img src="<?php echo $forth_section_chart_panel_3['url'] ?>"></div>
+                            <div class="panel-4"><img src="<?php echo $forth_section_chart_panel_4['url'] ?>"></div>
+                            <div class="panel-5"><img src="<?php echo $forth_section_chart_panel_5['url'] ?>"></div>
+                            <div class="panel-6"><img src="<?php echo $forth_section_chart_panel_6['url'] ?>"></div>
+                            <div class="panel-7"><img src="<?php echo $forth_section_chart_panel_7['url'] ?>"></div>
+                            <div class="panel-8"><img src="<?php echo $forth_section_chart_panel_8['url'] ?>"></div>
+                            <div class="content">
+                                <?php echo $forth_section_checkmark_content; ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="fifth-section">
+                    <div class="background-image" style="background-image: url(<?php echo $fifth_section_background_image['url']; ?>)">
+                        <div class="grid-x">
+                            <div class="cell auto"></div>
+                            <div class="cell shrink">
+                            <div class="chevrons" style="background-image: url(<?php echo $fifth_section_chevron['url']; ?>)">
+                                <div class="heading"><?php echo $fifth_section_heading; ?></div>
+                                <div class="content"><?php echo $fifth_section_content; ?></div>
+                            </div>
+                            </div>
+                            <div class="cell auto" style="background-color: #bfebfb;"></div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="sixth-section">
+                <div class="chevrons" style="background-image: url(<?php echo $sixth_section_chevrons['url']; ?>)">
+
+                </div>
+            </div>
+
+            <div class="seventh-section">
+                <div class="chevrons" style="background-image: url(<?php echo $seventh_section_chevrons['url']; ?>)">
+
+                </div>
+            </div>
 
             <?php endwhile;
             endif; ?>
