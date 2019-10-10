@@ -82,19 +82,33 @@ get_header(); ?>
         <?php $seventh_section_line_one = get_sub_field('seventh_section_line_one'); ?>
         <?php $seventh_section_line_two = get_sub_field('seventh_section_line_two'); ?>
         <?php $seventh_section_line_three = get_sub_field('seventh_section_line_three'); ?>
-        <?php if (have_rows('seventh_section_link_list')) : ?>
-            <?php while (have_rows('seventh_section_link_list')) : the_row(); ?>
-                <?php //the_sub_field( 'link_name' ); ?>
-                <?php //the_sub_field( 'url' ); ?>
-            <?php endwhile; ?>
-        <?php else : ?>
-            <?php // no rows found ?>
-        <?php endif; ?>
+        <?php $seventh_section_link_list = ''; ?>
+        <?php
+        if (have_rows('seventh_section_link_list')) :
+            $seventh_section_link_list = '<ul class="link-list">';
+            while (have_rows('seventh_section_link_list')) : the_row();
+                $seventh_section_link_list .= '<li><a href="' . get_sub_field('url') . '">' . get_sub_field('link_name') . '</a></li>';
+            endwhile;
+            $seventh_section_link_list .= '</ul>';
+        endif;
+        ?>
         <?php $seventh_section_footer_text = get_sub_field('seventh_section_footer_text'); ?>
     <?php endwhile; ?>
 <?php endif; ?>
 
-<div class="content">
+<?php if (have_rows('mobile')) : ?>
+    <?php while (have_rows('mobile')) : the_row(); ?>
+        <?php $mobile_first_section_image = get_sub_field('first_section_image'); ?>
+        <?php $mobile_first_section_chevron = get_sub_field('first_section_chevron'); ?>
+        <?php $mobile_second_section_chevron = get_sub_field('mobile_second_section_chevron'); ?>
+        <?php $mobile_third_section_image = get_sub_field('mobile_third_section_image'); ?>
+        <?php $mobile_third_section_chevron = get_sub_field('mobile_third_section_chevron'); ?>
+        <?php $mobile_third_section_frame = get_sub_field('mobile_third_section_frame'); ?>
+        <?php $mobile_third_section_content = get_sub_field('mobile_third_section_content'); ?>
+    <?php endwhile; ?>
+<?php endif; ?>
+
+<div class="content main">
 
     <div class="inner-content grid-x">
 
@@ -103,9 +117,26 @@ get_header(); ?>
             <?php if (have_posts()) : while (have_posts()) :
                 the_post();
                 ?>
-                <div class="backdrop_parallax_background_image" style="background-image: url(<?php echo $top_parallax_background_image['url']; ?>)">
+                <div class="backdrop_parallax_background_image show-for-large" style="background-image: url(<?php echo $top_parallax_background_image['url']; ?>)">
                 </div>
-                <div class="first-section">
+                <div class="menu-button"></div>
+
+                <div class="first-section-mobile hide-for-large">
+                    <div class="background-image" style="background-image: url(<?php echo $mobile_first_section_image['url']; ?>)">
+                        <div class="chevrons" style="background-image: url(<?php echo $mobile_first_section_chevron['url']; ?>)">
+                            <div class="graph">
+                                <img src="<?php echo $first_section_graph['url']; ?>" alt="<?php echo $first_section_graph['alt']; ?>"/>
+                            </div>
+                            <!--<div class="graph-image" style="background-image: url(<?php /*echo $first_section_graph['url']; */ ?>)"></div>-->
+                            <div class="heading"><?php echo $first_section_heading; ?></div>
+                            <div class="strap-line"><?php echo strip_tags($first_section_strapline); ?></div>
+                            <div class="white-chevron"><img class="right-arrow" src="<?php echo $first_section_white_arrow['url']; ?>"
+                                                            alt="<?php echo $first_section_white_arrow['alt']; ?>"/></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="first-section show-for-large">
                     <div class="grid-x">
                         <div class="cell auto">
                             <div class="top"></div>
@@ -153,7 +184,35 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <div class="second-section">
+                <div class="mobile-second-section hide-for-large">
+                    <div class="chevrons" style="background-image: url(<?php echo $mobile_second_section_chevron['url']; ?>)">
+                        <div class="heading">
+                            <?php echo strip_tags($first_section_sub_heading); ?>
+                        </div>
+                        <div class="content">
+                            <?php echo $mobile_third_section_content; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-third-section hide-for-large white-background">
+                    <div class="background-image" style="background-image: url(<?php echo $mobile_third_section_image['url']; ?>)">
+                        <div class="chevrons" style="background-image: url(<?php echo $mobile_third_section_chevron['url']; ?>)">
+                            <div class="white-background">
+                                <div class="frame" style="background-image: url(<?php echo $mobile_third_section_frame['url']; ?>)">
+                                    <div class="heading">
+                                        <?php echo $second_section_heading; ?>
+                                    </div>
+                                    <div class="content">
+                                        <?php echo $second_section_content; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="second-section show-for-large">
                     <div class="background-image" style="background-image: url(<?php echo $second_section_background_image['url']; ?>)">
                         <div class="gradient-chevron" style="background-image: url(<?php echo $second_section_gradient_chevron['url']; ?>)">
                             <div class="grid-container">
@@ -270,7 +329,7 @@ get_header(); ?>
                                     <?php echo $sixth_section_heading; ?>
                                 </div>
                                 <div class="grid-x">
-                                    <div class="cell large-4">
+                                    <div class="cell large-4 medium-4">
                                         <div class="sub-heading">
                                             <?php echo $sixth_section_strapline; ?>
                                         </div>
@@ -279,7 +338,7 @@ get_header(); ?>
                                         </div>
 
                                     </div>
-                                    <div class="cell large-8">
+                                    <div class="cell large-8 medium-8">
                                         <div class="video">
                                             <div class="shadow">
                                                 <iframe src="https://player.vimeo.com/video/189937619?color=ffffff&title=0&byline=0&portrait=0" width="542" height="305" frameborder="0"
@@ -309,7 +368,38 @@ get_header(); ?>
 
                 <div class="seventh-section">
                     <div class="chevrons" style="background-image: url(<?php echo $seventh_section_chevrons['url']; ?>)">
-
+                        <div class="grid-container">
+                            <div class="grid-x">
+                                <div class="cell shrink">
+                                    <div class="left-line active">
+                                        <?php echo $seventh_section_line_one; ?>
+                                    </div>
+                                    <div class="left-line">
+                                        <?php echo $seventh_section_line_two; ?>
+                                    </div>
+                                    <div class="left-line">
+                                        <?php echo $seventh_section_line_three; ?>
+                                    </div>
+                                </div>
+                                <div class="cell shrink">
+                                    <?php echo $seventh_section_link_list; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-container">
+                            <div class="grid-x">
+                                <div class="cell shrink">
+                                    <div class="logo">
+                                        <img src="<?php echo $seventh_section_logo['url']; ?>"/>
+                                    </div>
+                                </div>
+                                <div class="cell shrink">
+                                    <div class="footer-text">
+                                        <?php echo $seventh_section_footer_text; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

@@ -1,0 +1,61 @@
+.gform_wrapper {
+  h3.gform_title {
+    font-size: 60px;
+    color: $dark-blue;
+    font-weight: $font-thin;
+  }
+  span.gform_description {
+    font-size: 21px;
+    line-height: 1.2;
+    color: $dark-blue;
+    font-weight: $font-light;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    display: block;
+  }
+  label {
+    font-size: 21px;
+    line-height: 1.2;
+    color: $dark-blue;
+    font-weight: $font-semi-bold;
+  }
+  .gfield.name {
+    .gfield_label.gfield_label_before_complex {
+      display: none;
+    }
+  }
+  input[type="text"], select, textarea {
+    background-color: #f6f6f6;
+    border-radius: 5px;
+  }
+  li[class*="-col-1-of-2"] {
+    padding-right: 1em;
+  }
+  li[class*="-col-2-of-2"] {
+    padding-left: 1em;
+  }
+  .blankfield {
+    min-height: 80px;
+  }
+  .ou {
+    line-height:80px;
+    font-size:21px;
+    color: $dark-blue;
+    font-weight: $font-semi-bold;
+  }
+  .button {
+    text-transform: uppercase;
+    font-size: 21px;
+    font-weight: $font-light;
+    min-width: 266px;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+  }
+  .gform_footer {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+  .validation_message, .validation_error {
+    color: red;
+  }
+}

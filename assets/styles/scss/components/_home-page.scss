@@ -2,8 +2,47 @@
   position: relative;
 }
 
+body {
+  background-color: #7F7F7F;
+}
+
+.content.main {
+  /*box-shadow: 0 0 14px #00719c;*/
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-button {
+  position: fixed;
+  z-index: 100;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 13.099vw;
+  background-image: url("../images/mobile-menu.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include breakpoint(large) {
+    left: 80px;
+    top: 20px;
+    width: 81px;
+    height: 46px;
+    background-image: url("../images/menu.png");
+  }
+  @include breakpoint(1600) {
+    left: 50%;
+    margin-left: -720px;
+  }
+}
+
 .light-blue-background {
   background-color: $light-blue;
+}
+
+.white-background {
+  background-color: $white;
 }
 
 .backdrop_parallax_background_image {
@@ -12,19 +51,137 @@
   background-repeat: no-repeat;
   background-size: 1600px 1060px;
   width: 100%;
+  max-width: 1600px;
   height: 1060px;
   max-height: 1060px;
   overflow: hidden;
   position: fixed;
   top: 0;
-  @include breakpoint(1600px) {
+ /* @include breakpoint(1600px) {
     background-size: 100vw 66.25vw;
-  }
+  }*/
 }
 
 .admin-bar {
   .backdrop_parallax_background_image {
     top: 32px;
+  }
+}
+
+.first-section-mobile {
+  .background-image {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 160.606vw;
+    background-size: 100vw 160.606vw;
+    background-position: top center;
+    .chevrons {
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 160.606vw;
+      background-size: cover;
+      padding-top: 48.289vw;
+      padding-left: 5.865vw;
+      position: relative;
+      .graph {
+        img {
+          width: 16.422vw;
+          height: auto;
+        }
+      }
+      .white-chevron {
+        position: absolute;
+        top: 66.569vw;
+        left: 78.495vw;
+        img {
+          width: 15.543vw;
+          height: auto;
+        }
+      }
+      .heading {
+        color: white;
+        font-size: 7.820vw;
+        font-weight: $font-semi-bold;
+        line-height: 1;
+        padding-top: 5.865vw;
+      }
+
+      .strap-line {
+        color: $white;
+        font-size: 4.156vw;
+        line-height: 1.2;
+        font-weight: $font-light;
+        max-width: 72.623vw;
+      }
+    }
+  }
+}
+
+.mobile-second-section {
+  .chevrons {
+    height: 198.436vw;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    padding-top: 12.512vw;
+    padding-left: 5.865vw;
+    padding-right: 9.775vw;
+    .heading {
+      font-size: 11.828vw;
+      color: $white;
+      font-weight: $font-thin;
+      line-height: 1;
+    }
+    .content, .content p {
+      font-size: 4.156vw;
+      color: $white;
+      font-weight: $font-light;
+      line-height: 1.2;
+    }
+  }
+}
+
+.mobile-third-section {
+  .background-image {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100vw 71.359vw;
+    &.fixBackground {
+      background-attachment: fixed;
+    }
+    .chevrons {
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 100vw 71.359vw;
+      height: 192.375vw;
+      padding-top: 71.359vw;
+      .frame {
+        position: relative;
+        height: 121.016vw;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100vw 48.876vw;
+        padding-top: 13.881vw;
+        padding-left: 5.865vw;
+        .heading {
+          font-size: 11.875vw;
+          font-weight: $font-thin;
+          color: $dark-blue;
+          line-height: 1;
+          padding-bottom: 5.865vw;
+        }
+        .content, .content p {
+          font-size: 4.156vw;
+          line-height: 1.2;
+          color: $dark-blue;
+          font-weight: $font-light;
+        }
+      }
+    }
   }
 }
 
@@ -370,6 +527,12 @@
 
       }
     }
+    .middle {
+      min-height: 768px;
+    }
+    .bottom {
+      padding-top: 60px;
+    }
   }
 }
 
@@ -377,7 +540,7 @@
   position: relative;
   background: $white;
   .chevrons {
-    background-position: top left;
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: 1600px 768px;
     width: 100%;
@@ -385,6 +548,71 @@
     margin-left: auto;
     margin-right: auto;
     height: 768px;
+    padding-top: 40px;
+    .left-line {
+      max-width: 420px;
+      line-height: 1;
+      font-size: 30px;
+      color: $white;
+      font-weight: $font-thin;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-top: 1px solid $white;
+      &:last-of-type {
+        border-bottom: 1px solid $white;
+      }
+      &.active {
+        font-weight: $font-semi-bold;
+      }
+    }
+    .link-list {
+      margin-left: 300px;
+      list-style: none;
+      line-height: 15px;
+      li {
+        max-width: 256px;
+        border-top: 1px solid $white;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        line-height: 15px;
+        a {
+          line-height: 15px;
+          color: $white;
+          font-weight: $font-light;
+          text-transform: uppercase;
+          font-size: 15px;
+          position: relative;
+          &:hover {
+            color: $dark-blue;
+            &:before {
+              content: " ";
+              display: block;
+              position: absolute;
+              top: 50%;
+              margin-top: -12px;
+              left: -20px;
+              width: 13px;
+              height: 23px;
+              background-image: url(../images/arrow.png);
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+      &:last-child {
+        border-bottom: 1px solid $white;
+      }
+    }
+    .logo {
+      padding-right: 80px;
+    }
+    .footer-text {
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: $font-semi-bold;
+      color: $white;
+      padding-top: 35px;
+    }
   }
 }
 
@@ -613,7 +841,7 @@
       background-size: 1600px 91px;
       margin-left: -55px;
       margin-top: -22px;
-
+      cursor: pointer;
     }
   }
 
