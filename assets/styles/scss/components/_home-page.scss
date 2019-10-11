@@ -57,9 +57,9 @@ body {
   overflow: hidden;
   position: fixed;
   top: 0;
- /* @include breakpoint(1600px) {
-    background-size: 100vw 66.25vw;
-  }*/
+  /* @include breakpoint(1600px) {
+     background-size: 100vw 66.25vw;
+   }*/
 }
 
 .admin-bar {
@@ -76,6 +76,7 @@ body {
     height: 160.606vw;
     background-size: 100vw 160.606vw;
     background-position: top center;
+
     .chevrons {
       background-repeat: no-repeat;
       width: 100%;
@@ -84,21 +85,25 @@ body {
       padding-top: 48.289vw;
       padding-left: 5.865vw;
       position: relative;
+
       .graph {
         img {
           width: 16.422vw;
           height: auto;
         }
       }
+
       .white-chevron {
         position: absolute;
         top: 66.569vw;
         left: 78.495vw;
+
         img {
           width: 15.543vw;
           height: auto;
         }
       }
+
       .heading {
         color: white;
         font-size: 7.820vw;
@@ -128,12 +133,14 @@ body {
     padding-top: 12.512vw;
     padding-left: 5.865vw;
     padding-right: 9.775vw;
+
     .heading {
       font-size: 11.828vw;
       color: $white;
       font-weight: $font-thin;
       line-height: 1;
     }
+
     .content, .content p {
       font-size: 4.156vw;
       color: $white;
@@ -149,9 +156,11 @@ body {
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100vw 71.359vw;
+
     &.fixBackground {
       background-attachment: fixed;
     }
+
     .chevrons {
       width: 100%;
       background-repeat: no-repeat;
@@ -159,6 +168,7 @@ body {
       background-size: 100vw 71.359vw;
       height: 192.375vw;
       padding-top: 71.359vw;
+
       .frame {
         position: relative;
         height: 121.016vw;
@@ -167,6 +177,7 @@ body {
         background-size: 100vw 48.876vw;
         padding-top: 13.881vw;
         padding-left: 5.865vw;
+
         .heading {
           font-size: 11.875vw;
           font-weight: $font-thin;
@@ -174,6 +185,7 @@ body {
           line-height: 1;
           padding-bottom: 5.865vw;
         }
+
         .content, .content p {
           font-size: 4.156vw;
           line-height: 1.2;
@@ -181,6 +193,45 @@ body {
           font-weight: $font-light;
         }
       }
+    }
+  }
+}
+
+.mobile-forth-section {
+  .background-image {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100vw 147.312vw;
+
+    &.fixBackground {
+      background-attachment: fixed;
+    }
+
+    .chevrons {
+      width: 100%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: 100vw 241.74vw;
+      height: 198.827vw;
+      padding-top: 78.201vw;
+      padding-left: 5.865vw;
+
+      .heading {
+        font-size: 11.875vw;
+        font-weight: $font-thin;
+        color: $white;
+        line-height: 1;
+        padding-bottom: 5.865vw;
+      }
+
+      .content, .content p {
+        font-size: 4.156vw;
+        line-height: 1.2;
+        color: $white;
+        font-weight: $font-light;
+      }
+
     }
   }
 }
@@ -398,6 +449,7 @@ body {
 
 .fifth-section {
   position: relative;
+
   .background-image {
     background-position: top center;
     background-repeat: no-repeat;
@@ -424,6 +476,7 @@ body {
       max-width: 1600px;
       margin-left: auto;
       margin-right: auto;
+
       .heading {
         color: $dark-blue;
         font-size: 60px;
@@ -451,6 +504,7 @@ body {
 .sixth-section {
   position: relative;
   background: $white;
+
   .chevrons {
     background-position: top center;
     background-repeat: no-repeat;
@@ -460,18 +514,21 @@ body {
     margin-left: auto;
     margin-right: auto;
     min-height: 2017px;
+
     .top {
       padding-top: 90px;
       padding-left: 5.125vw;
       @include breakpoint(1600) {
         padding-left: 82px;
       }
+
       .heading {
         font-size: 60px;
         font-weight: $font-thin;
         color: $dark-blue;
         line-height: 1;
       }
+
       .sub-heading {
         padding-top: 25px;
         font-size: 21px;
@@ -479,20 +536,24 @@ body {
         color: $dark-blue;
         font-weight: $font-light;
       }
+
       .bullets, .bullets ul, .bullets ul li {
         font-size: 21px;
         font-weight: $font-light;
         color: $dark-gray;
         line-height: 1.2;
       }
+
       .bullets {
         padding-top: 60px;
+
         ul {
           list-style: none;
         }
 
         ul {
           margin-left: -16px;
+
           li {
             position: relative;
             padding-left: 2em;
@@ -501,35 +562,42 @@ body {
             background-repeat: no-repeat;
             background-position: 0 4px;
             background-size: 12px 20px;
+
             &:first-child {
               color: $dark-blue;
             }
+
             &:nth-child(2) {
               margin-left: 60px;
             }
+
             &:nth-child(3) {
               margin-left: 120px;
             }
           }
         }
       }
+
       .video {
         padding-top: 26px;
         padding-right: 8.75vw;
         padding-left: 5.625vw;
-        @include breakpoint(1600){
+        @include breakpoint(1600) {
           padding-right: 140px;
           padding-left: 90px;
         }
+
         .shadow {
           box-shadow: 5px 5px 14px #00719c;
         }
 
       }
     }
+
     .middle {
       min-height: 768px;
     }
+
     .bottom {
       padding-top: 60px;
     }
@@ -539,6 +607,7 @@ body {
 .seventh-section {
   position: relative;
   background: $white;
+
   .chevrons {
     background-position: top center;
     background-repeat: no-repeat;
@@ -549,6 +618,7 @@ body {
     margin-right: auto;
     height: 768px;
     padding-top: 40px;
+
     .left-line {
       max-width: 420px;
       line-height: 1;
@@ -558,23 +628,28 @@ body {
       padding-top: 15px;
       padding-bottom: 15px;
       border-top: 1px solid $white;
+
       &:last-of-type {
         border-bottom: 1px solid $white;
       }
+
       &.active {
         font-weight: $font-semi-bold;
       }
     }
+
     .link-list {
       margin-left: 300px;
       list-style: none;
       line-height: 15px;
+
       li {
         max-width: 256px;
         border-top: 1px solid $white;
         padding-top: 15px;
         padding-bottom: 15px;
         line-height: 15px;
+
         a {
           line-height: 15px;
           color: $white;
@@ -582,8 +657,10 @@ body {
           text-transform: uppercase;
           font-size: 15px;
           position: relative;
+
           &:hover {
             color: $dark-blue;
+
             &:before {
               content: " ";
               display: block;
@@ -599,13 +676,16 @@ body {
           }
         }
       }
+
       &:last-child {
         border-bottom: 1px solid $white;
       }
     }
+
     .logo {
       padding-right: 80px;
     }
+
     .footer-text {
       font-size: 18px;
       line-height: 1.4;
@@ -922,6 +1002,7 @@ body {
             position: relative;
             padding-left: 1em;
             margin-bottom: 1em;
+
             &:before {
               position: absolute;
               top: 0;
