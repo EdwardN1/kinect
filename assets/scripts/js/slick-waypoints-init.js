@@ -7,8 +7,8 @@ jQuery(document).ready(function ($) {
         var wpClass = $element.data('waypoint-class');
 
         $element.waypoint(function (direction) {
-            if(direction==wpDirection) {
-                if(!$element.hasClass(wpClass)) {
+            if (direction == wpDirection) {
+                if (!$element.hasClass(wpClass)) {
                     $element.addClass(wpClass);
                 }
             }
@@ -21,12 +21,12 @@ jQuery(document).ready(function ($) {
     $('[data-slick-slider]').slick();
 
 
-    $('.first-section .bottom-image, .second-section .background-image, .third-section .background-image, .fifth-section .background-image, .mobile-third-section .background-image, .mobile-forth-section .background-image, .mobile-fifth-section .background-image').each(function () {
+    $('.first-section .bottom-image, .second-section .background-image, .third-section .background-image, .fifth-section .background-image, .mobile-third-section .background-image, .mobile-forth-section .background-image, .mobile-fifth-section .background-image, .mobile-seventh-section .background-image').each(function () {
         var $e = $(this);
 
         $e.waypoint(function (direction) {
-            if(direction=='down') {
-                if(!$e.hasClass('fixBackground')) {
+            if (direction == 'down') {
+                if (!$e.hasClass('fixBackground')) {
                     $e.addClass('fixBackground');
                 }
             } else {

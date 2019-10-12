@@ -454,6 +454,7 @@ body {
     background-size: 100vw 72.043vw;
     height: 72.043vw;
     width: 100%;
+
     &.fixBackground {
       background-attachment: fixed;
     }
@@ -512,6 +513,43 @@ body {
       }
     }
   }
+}
+
+.mobile-seventh-section {
+  .background-image {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100vw 71vw;
+    height: 71vw;
+    width: 100%;
+
+    &.fixBackground {
+      background-attachment: fixed;
+    }
+  }
+
+  .frame {
+    background-color: $white;
+    height: 109vw;
+    width: 100%;
+    padding-left: 6vw;
+    padding-top: 14px;
+    .heading {
+      font-size: 12vw;
+      font-weight: $font-thin;
+      color: $dark-blue;
+      line-height: 1;
+      padding-bottom: 7vw;
+      padding-top: 7vw;
+    }
+    .content, .content p {
+      font-size: 4vw;
+      font-weight: $font-light;
+      color: $dark-blue;
+      line-height: 1.2;
+    }
+  }
+
 }
 
 .sixth-section {
@@ -575,8 +613,13 @@ body {
             background-repeat: no-repeat;
             background-position: 0 4px;
             background-size: 12px 20px;
+            cursor: pointer;
 
-            &:first-child {
+            /*&:first-child {
+              color: $dark-blue;
+            }*/
+
+            &.active {
               color: $dark-blue;
             }
 
@@ -595,6 +638,19 @@ body {
         padding-top: 26px;
         padding-right: 8.75vw;
         padding-left: 5.625vw;
+        display: none;
+        &.active {
+          display: block;
+        }
+       /* &.vid-1 {
+          outline: 1px solid red;
+        }
+        &.vid-2 {
+          outline: 1px solid green;
+        }
+        &.vid-3 {
+          outline: 1px solid yellow;
+        }*/
         @include breakpoint(1600) {
           padding-right: 140px;
           padding-left: 90px;
@@ -614,6 +670,49 @@ body {
     .bottom {
       padding-top: 60px;
     }
+  }
+}
+
+.mobile-eighth-section {
+  background-color: $white;
+  .background-image {
+    background-size: 100vw 422.87vw;
+    background-position: top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 100%;
+    height: 422.87vw;
+    .frame {
+      padding-left: 6vw;
+      padding-right: 6vw;
+      padding-top: 13.78vw;
+      .heading {
+        color: $white;
+        font-weight: $font-thin;
+        font-size: 11.88vw;
+        line-height: 1;
+        padding-bottom: 5.89vw;
+      }
+      .sub-heading, .description {
+        color: $white;
+        font-weight: $font-light;
+        font-size: 4.16vw;
+        line-height: 1.2;
+      }
+      .video {
+        box-shadow: 5px 5px 14px #00719c;
+        margin-top: 5.08vw;
+      }
+    }
+  }
+}
+
+.mobile-ninth-section {
+  background-color: $white;
+  .frame {
+    padding-left: 6vw;
+    padding-right: 6vw;
+    padding-top: 14vw;
   }
 }
 
@@ -714,18 +813,21 @@ body {
   background: $white;
 
   .background-image {
-    background-size: 100vw 403.519vw;
+    background-size: 100vw 433vw;
     background-position: top center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 403.519vw;
+    max-width: 100%;
+    height: 433vw;
+    padding-top: 13.685vw;
+    //padding-left: 5.865vw;
     @include breakpoint(large) {
       background-size: 1600px 1535px;
       max-width: 1600px;
       margin-left: auto;
       margin-right: auto;
       height: 1535px;
-
+      padding: 0;
     }
 
     &.fixBackground {
@@ -733,8 +835,9 @@ body {
     }
 
     .left {
-
+      padding-left: 5.865vw;
       @include breakpoint(large) {
+        padding-left: 0;
         padding-top: 90px;
         max-width: 390px;
       }
@@ -743,15 +846,39 @@ body {
       .heading {
         color: $dark-blue;
         font-weight: $font-thin;
-        font-size: 60px;
+        font-size: 11.875vw;
         line-height: 1;
+        padding-bottom: 8.797vw;
+        @include breakpoint(large) {
+          padding-bottom: 0;
+          font-size: 60px;
+        }
       }
 
       .bullets {
+        display: none;
+        opacity: 1;
+        transition: opacity 0.15s ease;
+
+        &.active {
+          display: block;
+        }
+
+        &.faded {
+          opacity: 0;
+        }
+
         color: $grey;
         font-weight: $font-light;
-        font-size: 21px;
+        font-size: 4.156vw;
         line-height: 1.2;
+        max-width: 64vw;
+        padding-top: 7vw;
+        @include breakpoint(large) {
+          padding-top: 0;
+          max-width: 390px;
+          font-size: 21px;
+        }
 
         ul {
           line-height: 1.2;
@@ -763,15 +890,18 @@ body {
       }
 
       .icons {
-        min-height: 125px;
+        height: 17.009vw;
 
         .icon {
-          padding-top: 20px;
-          padding-bottom: 20px;
-          max-height: 85px;
           display: none;
           transition: opacity 0.15s ease;
           opacity: 1;
+          height: 17.009vw;
+
+          img {
+            height: 17.009vw;
+            width: auto;
+          }
 
           &.faded {
             opacity: 0;
@@ -781,23 +911,48 @@ body {
             display: block;
           }
         }
+
+        @include breakpoint(large) {
+          min-height: 125px;
+          width: 390px;
+          .icon {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            max-height: 85px;
+          }
+
+        }
       }
     }
 
     .right {
-
+      position: relative;
       @include breakpoint(large) {
         padding-top: 110px;
         padding-left: 115px;
       }
 
       .pizza-box {
-        position: relative;
-        width: 550px;
+        position: absolute;
+        left: 22vw;
+        top: 0;
+        width: 106.94vw;
+        @include breakpoint(large) {
+          position: relative;
+          left: auto;
+          top: auto;
+          width: 550px;
+        }
+
 
         .pizza {
-          width: 550px;
-          height: 550px;
+          width: 106.94vw;
+          height: 106.94vw;
+          @include breakpoint(large) {
+            width: 550px;
+            height: 550px;
+          }
+
           position: relative;
 
           &.animation {
@@ -904,64 +1059,267 @@ body {
 
           .slice {
             position: absolute;
-            width: 265px;
-            height: 265px;
+            width: 52.199vw;
+            height: 52.199vw;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+
+            @include breakpoint(large) {
+              width: 265px;
+              height: 265px;
+              img {
+                width: auto;
+              }
+            }
             transition: opacity 0.3s ease;
           }
 
           .contrats {
             top: 0;
-            left: 10px;
+            left: 0;
+            padding-left: 1.955vw;
+            @include breakpoint(large) {
+              top: 0;
+              left: 10px;
+              padding: 0;
+            }
           }
 
           .donnees {
-            top: 10px;
+            top: 0;
             right: 0;
+            padding-top: 1.955vw;
+            @include breakpoint(large) {
+              top: 10px;
+              right: 0;
+              padding: 0;
+            }
           }
 
           .consommations {
             bottom: 0;
             right: 0;
+            padding-right: 1.955vw;
+            @include breakpoint(large) {
+              bottom: 0;
+              right: 0;
+              padding: 0;
+            }
           }
 
           .veille {
             bottom: 0;
             left: 0;
+            @include breakpoint(large) {
+              bottom: 0;
+              left: 0;
+            }
           }
         }
 
         .budget {
           position: absolute;
-          left: 175px;
-          top: 160px;
+          left: 33vw;
+          top: 33vw;
+
+          img {
+            width: 40vw;
+            height: auto;
+          }
+
+          @include breakpoint(large) {
+            left: 175px;
+            top: 160px;
+
+            img {
+              width: 204px;
+
+            }
+          }
         }
       }
     }
 
     .suivant {
-      height: 91px;
-      width: 100%;
+      cursor: pointer;
+      height: 18vw;
+      width: 25vw;
       background-position: top center;
       background-repeat: no-repeat;
-      background-size: 1600px 91px;
-      margin-left: -55px;
-      margin-top: -22px;
-      cursor: pointer;
+      background-size: 25vw 18vw;
+      position: absolute;
+      top: 8.255vw;
+      left: 2.255vw;
+      @include breakpoint(large) {
+        position: relative;
+        top: auto;
+        left: auto;
+        height: 91px;
+        width: 100%;
+        background-size: 1600px 91px;
+        margin-left: -55px;
+        margin-top: -22px;
+      }
+
     }
   }
 
   .chart {
-    max-width: 920px;
-    width: 100%;
+    max-width: 88vw;
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    margin-top: 116vw;
 
     > div {
       position: absolute;
     }
 
-    @include breakpoint(920) {
+    .panel-1 {
+      top: 0;
+      left: 28vw;
+    }
+
+    .panel-2 {
+      top: 30vw;
+      left: 28vw;
+    }
+
+    .panel-3 {
+      top: 59vw;
+      left: 28vw;
+    }
+
+    .panel-4 {
+      top: 81vw;
+      left: 56vw;
+    }
+
+    .panel-5 {
+      top: 103vw;
+      left: 56vw;
+    }
+
+    .panel-6 {
+      top: 124vw;
+      left: 28vw;
+    }
+
+    .panel-7 {
+      top: 103vw;
+      left: 0;
+    }
+
+    .panel-8 {
+      top: 81vw;
+      left: 0;
+    }
+
+    .chart-circle {
+      top: 63vw;
+      left: 7vw;
+      height: 73vw;
+      width: 73vw;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .panel-arrow-1 {
+      width: 6vw;
+      height: 8vw;
+      left: 41vw;
+      top: 20vw;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      @include breakpoint(large) {
+        top: 123px;
+        left: 201px;
+        width: 45px;
+        height: 32px;
+      }
+    }
+
+    .panel-arrow-2 {
+      width: 6vw;
+      height: 8vw;
+      left: 41vw;
+      top: 49vw;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      @include breakpoint(large) {
+        top: 123px;
+        left: 486px;
+        width: 45px;
+        height: 32px;
+      }
+    }
+
+    .content {
+      left: 29vw;
+      top: 150vw;
+
+      ul, p, li {
+        font-size: 4vw;
+        line-height: 1.2;
+        font-weight: $font-bold;
+        color: $dark-blue;
+        max-width: 53vw;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      ul {
+        li {
+          position: relative;
+          padding-left: 1em;
+          margin-bottom: 1em;
+
+          &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '✓';
+          }
+        }
+      }
+    }
+
+    .a-panel {
+      width: 32vw;
+      height: 18vw;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+
+    @include breakpoint(large) {
+      margin-top: 0;
+      max-width: 920px;
+      width: 100%;
+      .a-panel {
+        width: 160px;
+        height: 90px;
+      }
       .panel-1 {
         top: 88px;
         left: 0;
@@ -997,6 +1355,8 @@ body {
       .chart-circle {
         top: 127px;
         left: 445px;
+        height: 411px;
+        width: 411px;
       }
       .panel-arrow-1 {
         top: 123px;
@@ -1040,6 +1400,7 @@ body {
     }
   }
 }
+
 
 /*
 .top_parallax_background_image {

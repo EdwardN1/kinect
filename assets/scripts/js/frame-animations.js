@@ -57,34 +57,34 @@ jQuery(document).ready(function ($) {
             if (!$(this).hasClass('animation')) {
                 $(this).addClass('animation');
                 $(this).addClass('rotate-one');
-                $('.icons .icon').addClass('faded');
-                $('.icons .icon').removeClass('active');
+                $('.icons .icon, .bullets').addClass('faded');
+                $('.icons .icon, .bullets').removeClass('active');
                 setTimeout(function () {
-                    showIcon('.veille.icon')
+                    showIcon('.veille.icon, .veille.bullets')
                 }, 150);
             } else {
                 if ($(this).hasClass('rotate-one')) {
                     if (!$(this).hasClass('rotate-two')) {
                         $(this).addClass('rotate-two');
-                        $('.icons .icon').addClass('faded');
-                        $('.icons .icon').removeClass('active');
+                        $('.icons .icon, .bullets').addClass('faded');
+                        $('.icons .icon, .bullets').removeClass('active');
                         setTimeout(function () {
-                            showIcon('.consommations.icon')
+                            showIcon('.consommations.icon, .consommations.bullets')
                         }, 150);
                     } else {
                         if (!$(this).hasClass('rotate-three')) {
                             $(this).addClass('rotate-three');
-                            $('.icons .icon').addClass('faded');
-                            $('.icons .icon').removeClass('active');
+                            $('.icons .icon, .bullets').addClass('faded');
+                            $('.icons .icon, .bullets').removeClass('active');
                             setTimeout(function () {
-                                showIcon('.donnees.icon')
+                                showIcon('.donnees.icon, .donnees.bullets')
                             }, 150);
                         } else {
                             $(this).addClass('rotate-four');
-                            $('.icons .icon').addClass('faded');
-                            $('.icons .icon').removeClass('active');
+                            $('.icons .icon, .bullets').addClass('faded');
+                            $('.icons .icon, .bullets').removeClass('active');
                             setTimeout(function () {
-                                showIcon('.contrats.icon')
+                                showIcon('.contrats.icon, .contrats.bullets')
                             }, 150);
                         }
                     }
@@ -117,6 +117,20 @@ jQuery(document).ready(function ($) {
             $(e).removeClass('rotate-four');
         }
     }
+
+    $('.sixth-section .bullets li:first-child').addClass('active');
+
+    $('.sixth-section .bullets li').click(function () {
+        if(!$(this).hasClass('active')) {
+            $('.sixth-section .bullets li').removeClass('active');
+            $(this).addClass('active');
+            var vidIndex = $(this).index() + 1;
+            $('.sixth-section .video').removeClass('active');
+            $('.sixth-section .video.vid-'+vidIndex).addClass('active');
+        }
+    })
+
+
 
 
 });

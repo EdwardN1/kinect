@@ -1,17 +1,24 @@
 .gform_wrapper {
   h3.gform_title {
-    font-size: 60px;
+    font-size: 11.88vw;
     color: $dark-blue;
     font-weight: $font-thin;
+    line-height: 1;
+    @include breakpoint(large) {
+      font-size: 60px;
+    }
   }
   span.gform_description {
-    font-size: 21px;
+    font-size: 4.16vw;
     line-height: 1.2;
     color: $dark-blue;
     font-weight: $font-light;
     padding-bottom: 30px;
     padding-top: 10px;
     display: block;
+    @include breakpoint(large) {
+      font-size: 21px;
+    }
   }
   label {
     font-size: 21px;
