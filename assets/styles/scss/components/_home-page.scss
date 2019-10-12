@@ -447,6 +447,19 @@ body {
   }
 }
 
+.mobile-fifth-section {
+  .background-image {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100vw 72.043vw;
+    height: 72.043vw;
+    width: 100%;
+    &.fixBackground {
+      background-attachment: fixed;
+    }
+  }
+}
+
 .fifth-section {
   position: relative;
 
@@ -701,22 +714,31 @@ body {
   background: $white;
 
   .background-image {
+    background-size: 100vw 403.519vw;
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 1600px 1535px;
     width: 100%;
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 1535px;
+    height: 403.519vw;
+    @include breakpoint(large) {
+      background-size: 1600px 1535px;
+      max-width: 1600px;
+      margin-left: auto;
+      margin-right: auto;
+      height: 1535px;
+
+    }
 
     &.fixBackground {
       background-attachment: fixed;
     }
 
     .left {
-      padding-top: 90px;
-      max-width: 390px;
+
+      @include breakpoint(large) {
+        padding-top: 90px;
+        max-width: 390px;
+      }
+
 
       .heading {
         color: $dark-blue;
@@ -763,8 +785,11 @@ body {
     }
 
     .right {
-      padding-top: 110px;
-      padding-left: 115px;
+
+      @include breakpoint(large) {
+        padding-top: 110px;
+        padding-left: 115px;
+      }
 
       .pizza-box {
         position: relative;

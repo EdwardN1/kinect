@@ -107,6 +107,8 @@ get_header(); ?>
 		<?php $mobile_third_section_content = get_sub_field( 'mobile_third_section_content' ); ?>
 		<?php $mobile_forth_section_image = get_sub_field( 'mobile_forth_section_image' ); ?>
 		<?php $mobile_forth_section_chevron = get_sub_field( 'mobile_forth_section_chevron' ); ?>
+		<?php $mobile_fifth_section_image = get_sub_field( 'mobile_fifth_section_image' ); ?>
+		<?php $mobile_sixth_section_chevrons = get_sub_field( 'mobile-sixth-section-chevrons' ); ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 
@@ -248,7 +250,7 @@ get_header(); ?>
                 </div>
 
 
-                <div class="third-section">
+                <div class="third-section show-for-large">
                     <div class="background-image" style="background-image: url(<?php echo $third_section_background_image['url']; ?>)">
                         <div class="chevrons" style="background-image: url(<?php echo $third_section_chevrons['url']; ?>)">
                             <div class="grid-container">
@@ -263,12 +265,29 @@ get_header(); ?>
                     </div>
                 </div>
 
+                <div class="mobile-fifth-section hide-for-large">
+                    <div class="background-image" style="background-image: url(<?php echo $mobile_fifth_section_image['url']; ?>)">
+
+                    </div>
+                </div>
+
                 <div class="forth-section">
-                    <div class="background-image" style="background-image: url(<?php echo $forth_section_chevrons['url']; ?>)">
+                    <style>
+                        .forth-section .background-image {
+                            background-image: url(<?php echo $mobile_sixth_section_chevrons['url']; ?>);
+                        }
+                        @media print, screen and (min-width: 64em) {
+                            .forth-section .background-image {
+                                background-image: url(<?php echo $forth_section_chevrons['url']; ?>);
+                            }
+
+                        }
+                    </style>
+                    <div class="background-image">
 
                         <div class="grid-container">
                             <div class="grid-x">
-                                <div class="cell shrink">
+                                <div class="cell large-shrink medium-12 small-12">
                                     <div class="left">
                                         <div class="heading">
 											<?php echo $forth_section_heading; ?>
@@ -284,8 +303,9 @@ get_header(); ?>
                                         </div>
                                     </div>
                                 </div>
-                                <div class=" cell auto">
+                                <div class=" cell large-auto medium-12 small-12">
                                     <div class="right">
+                                        <div class="suivant hide-for-large" style="background-image: url(<?php echo $forth_section_suivant_arrow['url']; ?>)"></div>
                                         <div class="pizza-box">
                                             <div class="pizza">
                                                 <div class="contrats slice"><img src="<?php echo $forth_section_contracts_pizza['url']; ?>"/></div>
@@ -299,7 +319,7 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="suivant" style="background-image: url(<?php echo $forth_section_suivant_arrow['url']; ?>)"></div>
+                        <div class="suivant show-for-large" style="background-image: url(<?php echo $forth_section_suivant_arrow['url']; ?>)"></div>
                         <div class="chart">
                             <div class="chart-circle"><img src="<?php echo $forth_section_circular_arrows['url'] ?>"></div>
                             <div class="panel-1"><img src="<?php echo $forth_section_chart_panel_1['url'] ?>"></div>
