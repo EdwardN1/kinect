@@ -6,13 +6,93 @@
  */
 ?>
 
-<div class="off-canvas position-right" id="off-canvas" data-off-canvas>
-	<?php joints_off_canvas_nav(); ?>
+<div class="off-canvas position-left" id="off-canvas" data-off-canvas data-off-canvas data-transition="overlap">
+	<?php /*joints_off_canvas_nav(); */?><!--
 
-	<?php if ( is_active_sidebar( 'offcanvas' ) ) : ?>
+	<?php /*if ( is_active_sidebar( 'offcanvas' ) ) : */?>
 
-		<?php dynamic_sidebar( 'offcanvas' ); ?>
+		<?php /*dynamic_sidebar( 'offcanvas' ); */?>
 
-	<?php endif; ?>
+	--><?php /*endif; */?>
+    <div class="nav-menu">
+        <ul data-magellan>
+            <li class="show-for-large">
+                <a href="#nav-1" data-toggle="off-canvas">
+                    ON VOUS AIDE À ACHETER<br>
+                    MIEUX ET OPTIMISER VOS<br>
+                    DEPENSES ENERGETIQUES<br>
+                </a>
+            </li>
+            <li class="hide-for-large">
+                <a href="#nav-1-m" data-toggle="off-canvas">
+                    ON VOUS AIDE À ACHETER<br>
+                    MIEUX ET OPTIMISER VOS<br>
+                    DEPENSES ENERGETIQUES<br>
+                </a>
+            </li>
+            <li class="show-for-large">
+                <a href="#nav-2" data-toggle="off-canvas">
+                    COMMENT VOUS GARANTIR LA<br>
+                    MEILLEURE OFFRE ?
+                </a>
+            </li>
+            <li class="hide-for-large">
+                <a href="#nav-2-m" data-toggle="off-canvas">
+                    COMMENT VOUS GARANTIR LA<br>
+                    MEILLEURE OFFRE ?
+                </a>
+            </li>
+            <li class="show-for-large">
+                <a href="#nav-3" data-toggle="off-canvas">
+                    LORSQUE VOUS COMPRENEZ QUI,<br>
+                    VOUS COMPRENEZ POURQUO
+                </a>
+            </li>
+            <li class="hide-for-large">
+                <a href="#nav-3-m" data-toggle="off-canvas">
+                    LORSQUE VOUS COMPRENEZ QUI,<br>
+                    VOUS COMPRENEZ POURQUO
+                </a>
+            </li>
+            <li>
+                <a href="#nav-4" data-toggle="off-canvas">
+                    VOTRE COURTIER
+                    EN ÉNERGIES
+                </a>
+            </li>
+            <li>
+                <a href="#nav-5" data-toggle="off-canvas">
+                    NOUS POUVONS FAIRE <br>
+                    ENCORE PLUS !
+                </a>
+            </li>
+            <li>
+                <a href="#nav-6" data-toggle="off-canvas">
+                    QUESTIONS FRÉQUEMMENT POSÉES
+                </a>
+            </li>
+            <li>
+                <a href="#nav-7" data-toggle="off-canvas">
+                    NEWSROOM
+                </a>
+            </li>
+            <li class="show-for-large">
+                <a href="#nav-8" data-toggle="off-canvas">
+                    CONTACTEZ NOUS
+                </a>
+            </li>
+            <li class="hide-for-large">
+                <a href="#nav-8-m" data-toggle="off-canvas">
+                    CONTACTEZ NOUS
+                </a>
+            </li>
+            <li>
+                <a href="#nav-9" data-toggle="off-canvas">
+                    TERMES ET CONDITIONS
+                </a>
+            </li>
+        </ul>
+        <div class="menu-close" data-toggle="off-canvas"></div>
+    </div>
 
 </div>

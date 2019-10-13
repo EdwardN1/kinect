@@ -1,0 +1,15 @@
+.fade-in-up {
+  @include mui-slide(in,  up, $fade: true);
+}
+
+.fade-in-down {
+  @include mui-slide(in,  up, $fade: true);
+}
+
+.fade-in-left {
+  @include mui-slide(in,  left, $fade: true);
+}
+
+.fade-in-right {
+  @include mui-slide(in,  right, $fade: true);
+}

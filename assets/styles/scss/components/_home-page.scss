@@ -6,6 +6,13 @@ body {
   background-color: #7F7F7F;
 }
 
+.footer {
+  margin-top: 0;
+  @include breakpoint(large) {
+    margin-top: 1em;
+  }
+}
+
 .content.main {
   /*box-shadow: 0 0 14px #00719c;*/
   max-width: 1600px;
@@ -280,30 +287,35 @@ body {
       margin-right: auto;
       max-width: 100%;
       position: relative;
+      .frame-animation {
+        position: relative;
+        display: none;
+        .heading {
+          color: white;
+          font-size: 48px;
+          font-weight: $font-semi-bold;
+          line-height: 1;
+          padding-top: 28px;
+        }
 
-      .heading {
-        color: white;
-        font-size: 48px;
-        font-weight: $font-semi-bold;
-        line-height: 1;
-        padding-top: 28px;
-      }
+        .strap-line {
+          color: $white;
+          font-size: 21px;
+          line-height: 1.2;
+          font-weight: $font-light;
+          display: none;
+        }
 
-      .strap-line {
-        color: $white;
-        font-size: 21px;
-        line-height: 1.2;
-        font-weight: $font-light;
-      }
-
-      .white-chevron {
-        position: absolute;
-        left: 64.223vw;
-        top: 97px;
-        @include breakpoint(682) {
-          left: 438px;
+        .white-chevron {
+          position: absolute;
+          left: 64.223vw;
+          top: 6px;
+          @include breakpoint(682) {
+            left: 438px;
+          }
         }
       }
+
     }
 
     .sub-heading {
@@ -312,6 +324,7 @@ body {
       font-size: 60px;
       line-height: 1;
       padding-top: 400px;
+      display: none;
     }
   }
 
@@ -338,7 +351,9 @@ body {
       max-width: 100vw;
       width: 1600px;
       height: 476px;
-
+      .content {
+        display: none;
+      }
       .content, .content p {
         color: $white;
         font-weight: $font-light;
@@ -383,11 +398,13 @@ body {
         color: $dark-blue;
         padding-top: 65px;
         padding-left: 30px;
+        display: none;
       }
 
       .content {
         padding-left: 30px;
         padding-top: 60px;
+        display: none;
       }
 
       .content, .content p {
@@ -424,6 +441,16 @@ body {
       background-size: 1600px 768px;
       width: 100%;
       height: 768px;
+      position: relative;
+      .fly-in-chevron {
+        position: absolute;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 1600px 768px;
+        width: 100%;
+        height: 768px;
+        display: none;
+      }
 
       .heading {
         color: $white;
@@ -431,10 +458,12 @@ body {
         line-height: 1;
         font-weight: $font-thin;
         padding-top: 65px;
+        display: none;
       }
 
       .content {
         padding-top: 30px;
+        display: none;
       }
 
       .content, .content p {
@@ -498,11 +527,13 @@ body {
         font-weight: $font-thin;
         padding-top: 65px;
         padding-left: 50%;
+        display: none;
       }
 
       .content {
         padding-top: 30px;
         padding-left: 50%;
+        display: none;
       }
 
       .content, .content p {
@@ -534,6 +565,7 @@ body {
     width: 100%;
     padding-left: 6vw;
     padding-top: 14px;
+
     .heading {
       font-size: 12vw;
       font-weight: $font-thin;
@@ -542,6 +574,7 @@ body {
       padding-bottom: 7vw;
       padding-top: 7vw;
     }
+
     .content, .content p {
       font-size: 4vw;
       font-weight: $font-light;
@@ -639,18 +672,20 @@ body {
         padding-right: 8.75vw;
         padding-left: 5.625vw;
         display: none;
+
         &.active {
           display: block;
         }
-       /* &.vid-1 {
-          outline: 1px solid red;
-        }
-        &.vid-2 {
-          outline: 1px solid green;
-        }
-        &.vid-3 {
-          outline: 1px solid yellow;
-        }*/
+
+        /* &.vid-1 {
+           outline: 1px solid red;
+         }
+         &.vid-2 {
+           outline: 1px solid green;
+         }
+         &.vid-3 {
+           outline: 1px solid yellow;
+         }*/
         @include breakpoint(1600) {
           padding-right: 140px;
           padding-left: 90px;
@@ -675,6 +710,7 @@ body {
 
 .mobile-eighth-section {
   background-color: $white;
+
   .background-image {
     background-size: 100vw 422.87vw;
     background-position: top center;
@@ -682,10 +718,12 @@ body {
     width: 100%;
     max-width: 100%;
     height: 422.87vw;
+
     .frame {
       padding-left: 6vw;
       padding-right: 6vw;
       padding-top: 13.78vw;
+
       .heading {
         color: $white;
         font-weight: $font-thin;
@@ -693,12 +731,14 @@ body {
         line-height: 1;
         padding-bottom: 5.89vw;
       }
+
       .sub-heading, .description {
         color: $white;
         font-weight: $font-light;
         font-size: 4.16vw;
         line-height: 1.2;
       }
+
       .video {
         box-shadow: 5px 5px 14px #00719c;
         margin-top: 5.08vw;
@@ -709,10 +749,71 @@ body {
 
 .mobile-ninth-section {
   background-color: $white;
+
   .frame {
     padding-left: 6vw;
     padding-right: 6vw;
     padding-top: 14vw;
+
+    .heading {
+      color: $dark-blue;
+      font-weight: $font-thin;
+      font-size: 11.88vw;
+      line-height: 1;
+      padding-bottom: 5.89vw;
+    }
+  }
+}
+
+.mobile-tenth-section {
+  .background-image {
+    background-color: $white;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100vw 106.16vw;
+    width: 100%;
+    height: 106.16vw;
+    .frame {
+      padding-left: 6vw;
+      padding-right: 6vw;
+      padding-top: 14vw;
+
+      .left-line {
+        max-width: 420px;
+        line-height: 1;
+        font-size: 5.94vw;
+        color: $white;
+        font-weight: $font-thin;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-top: 1px solid $white;
+
+        &.border-bottom {
+          border-bottom: 1px solid $white;
+        }
+
+        &.active {
+          font-weight: $font-semi-bold;
+        }
+      }
+
+      .logo {
+        padding-top: 6vw;
+        padding-bottom: 4vw;
+        img {
+          width: 40vw;
+          height: auto;
+        }
+      }
+
+      .footer-text {
+        font-size: 3.5vw;
+        line-height: 1.4;
+        font-weight: $font-semi-bold;
+        color: $white;
+        padding-top: 35px;
+      }
+    }
   }
 }
 
@@ -820,7 +921,12 @@ body {
     max-width: 100%;
     height: 433vw;
     padding-top: 13.685vw;
-    //padding-left: 5.865vw;
+    position: relative;
+    .fly-in-chevron {
+      display: none;
+      max-width: 100%;
+      height: 0;
+    }
     @include breakpoint(large) {
       background-size: 1600px 1535px;
       max-width: 1600px;
@@ -828,6 +934,17 @@ body {
       margin-right: auto;
       height: 1535px;
       padding: 0;
+      .fly-in-chevron {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: 1600px 1535px;
+        width: 100%;
+        max-width: 1600px;
+        height: 1535px;
+        background-position: top center;
+        background-repeat: no-repeat;
+      }
     }
 
     &.fixBackground {
@@ -840,6 +957,12 @@ body {
         padding-left: 0;
         padding-top: 90px;
         max-width: 390px;
+        .frame-4-fade-in-box {
+          display: block;
+          @include breakpoint(large) {
+            display: none;
+          }
+        }
       }
 
 
@@ -852,6 +975,14 @@ body {
         @include breakpoint(large) {
           padding-bottom: 0;
           font-size: 60px;
+          display: none;
+        }
+      }
+
+      .frame-4-fade-in-box {
+        min-height: 65.19vw;
+        @include breakpoint(large) {
+          min-height: 500px;
         }
       }
 
@@ -859,6 +990,7 @@ body {
         display: none;
         opacity: 1;
         transition: opacity 0.15s ease;
+        min-height: 48.18vw;
 
         &.active {
           display: block;
@@ -878,6 +1010,7 @@ body {
           padding-top: 0;
           max-width: 390px;
           font-size: 21px;
+          min-height: 320px;
         }
 
         ul {
@@ -915,10 +1048,14 @@ body {
         @include breakpoint(large) {
           min-height: 125px;
           width: 390px;
+          max-height: 125px;
           .icon {
             padding-top: 20px;
             padding-bottom: 20px;
-            max-height: 85px;
+            /*max-height: 85px;*/
+            img {
+              max-height: 85px;
+            }
           }
 
         }
@@ -930,6 +1067,8 @@ body {
       @include breakpoint(large) {
         padding-top: 110px;
         padding-left: 115px;
+        min-height: 780px;
+
       }
 
       .pizza-box {
@@ -937,11 +1076,13 @@ body {
         left: 22vw;
         top: 0;
         width: 106.94vw;
+        display: block;
         @include breakpoint(large) {
           position: relative;
           left: auto;
           top: auto;
           width: 550px;
+          display: none;
         }
 
 
@@ -1155,14 +1296,15 @@ body {
       top: 8.255vw;
       left: 2.255vw;
       @include breakpoint(large) {
-        position: relative;
-        top: auto;
-        left: auto;
+        position: absolute;
+        top: 638px;
+        left: -53px;
         height: 91px;
         width: 100%;
         background-size: 1600px 91px;
-        margin-left: -55px;
-        margin-top: -22px;
+        display: none;
+       /* margin-left: -55px;
+        margin-top: -22px;*/
       }
 
     }
@@ -1319,6 +1461,7 @@ body {
       .a-panel {
         width: 160px;
         height: 90px;
+        display: none;
       }
       .panel-1 {
         top: 88px;
@@ -1357,18 +1500,22 @@ body {
         left: 445px;
         height: 411px;
         width: 411px;
+        display: none;
       }
       .panel-arrow-1 {
         top: 123px;
         left: 201px;
+        display: none;
       }
       .panel-arrow-2 {
         top: 123px;
         left: 486px;
+        display: none;
       }
       .content {
         left: 0;
         top: 456px;
+        display: none;
 
         ul, p, li {
           font-size: 21px;
@@ -1402,196 +1549,3 @@ body {
 }
 
 
-/*
-.top_parallax_background_image {
-  background-attachment: fixed;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 1600px 1060px;
-  width: 100%;
-  //height: 96.063vw;
-  margin-left: auto;
-  margin-right: auto;
-  min-height: 1537px;
-  position: relative;
-  @include breakpoint(1600) {
-    background-size: cover;
-  }
-  .chevron-background-image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    //height: 29.85vw;
-    min-height: 476px;
-    background-size: 1600px 476px;
-    background-position: top center;
-    background-repeat: no-repeat;
-    @include breakpoint(1600) {
-      background-size: cover;
-    }
-    &.fixBackground {
-      background-attachment: fixed;
-      background-position: top center;
-      @include breakpoint(1600) {
-        background-size: 100vw 29.85vw;
-      }
-    }
-
-  }
-  .top {
-    width: 100%;
-    height: 768px;
-  }
-  .bottom {
-    width: 100%;
-    height: 768px;
-    background-color: $light-blue;
-    position: relative;
-    z-index: 1;
-  }
-  .first_chevron_set {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    //height: 96.063vw;
-    min-height: 1537px;
-    background-size: 1600px 1537px;
-    background-repeat: no-repeat;
-    background-position: top center;
-    position: relative;
-    max-width: 100vw;
-    width: 1600px;
-    @include breakpoint(1600) {
-      //background-size: cover;
-    }
-    .right-arrow {
-      position: absolute;
-      top: 332px;
-      left: 56%;
-      @include breakpoint(1600) {
-        left: 56%;
-      }
-    }
-  }
-}
-
-.second-section {
-  background-position: top center;
-  min-height: 768px;
-  background-size: 1600px 768px;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 48.063vw;
-  @include breakpoint(1600) {
-    background-size: cover;
-  }
-  &.fixBackground {
-    background-attachment: fixed;
-    @include breakpoint(1600) {
-      background-size: 100vw 48.063vw;
-    }
-  }
-  .second_section_gradient_chevron {
-    background-position: top center;
-    min-height: 768px;
-    background-size: 1600px 768px;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 48.063vw;
-    @include breakpoint(1600) {
-      background-size: cover;
-    }
-  }
-}
-
-.third-section {
-  background-position: top center;
-  min-height: 768px;
-  background-size: 1600px 768px;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 48.063vw;
-  @include breakpoint(1600) {
-    background-size: cover;
-  }
-  &.fixBackground {
-    background-attachment: fixed;
-    @include breakpoint(1600) {
-      background-size: 100vw 48.063vw;
-    }
-  }
-  .third_section_chevrons {
-    background-position: top center;
-    min-height: 768px;
-    background-size: 1600px 768px;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 48.063vw;
-    @include breakpoint(1600) {
-      background-size: cover;
-    }
-  }
-}
-.forth-section {
-  background-position: top center;
-  min-height: 1535px;
-  background-size: 1600px 1535px;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 95.938vw;
-  @include breakpoint(1600) {
-    background-size: cover;
-  }
-}
-.fifth-section {
-  background-position: top center;
-  min-height: 768px;
-  background-size: 1600px 768px;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 48.063vw;
-  @include breakpoint(1600) {
-    background-size: cover;
-  }
-  &.fixBackground {
-    background-attachment: fixed;
-    @include breakpoint(1600) {
-      background-size: 100vw 48.063vw;
-    }
-  }
-  .fifth-section-cheveron {
-    background-position: top center;
-    min-height: 768px;
-    background-size: 1600px 768px;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 48.063vw;
-    @include breakpoint(1600) {
-      background-size: cover;
-    }
-  }
-}
-.sixth-section {
-  background-position: top center;
-  min-height: 2017px;
-  background-size: 1600px 2017px;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 126.063vw;
-  @include breakpoint(1600) {
-    background-size: cover;
-  }
-
-}
-.seventh-section {
-  background-position: top center;
-  min-height: 768px;
-  background-size: 1600px 768px;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 48.063vw;
-  @include breakpoint(1600) {
-    background-size: cover;
-  }
-}*/
