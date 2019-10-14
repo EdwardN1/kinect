@@ -24,17 +24,19 @@ jQuery(document).ready(function ($) {
     $('.first-section .bottom-image, .second-section .background-image, .third-section .background-image, .fifth-section .background-image, .mobile-third-section .background-image, .mobile-forth-section .background-image, .mobile-fifth-section .background-image, .mobile-seventh-section .background-image').each(function () {
         var $e = $(this);
 
-        $e.waypoint(function (direction) {
-            if (direction == 'down') {
-                if (!$e.hasClass('fixBackground')) {
-                    $e.addClass('fixBackground');
+        if (!$('#isMobile').is(":visible")) {
+            $e.waypoint(function (direction) {
+                if (direction == 'down') {
+                    if (!$e.hasClass('fixBackground')) {
+                        $e.addClass('fixBackground');
+                    }
+                } else {
+                    $e.removeClass('fixBackground');
                 }
-            } else {
-                $e.removeClass('fixBackground');
-            }
-        }, {
-            offset: 0
-        });
+            }, {
+                offset: 0
+            });
+        }
     });
 
 });

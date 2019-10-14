@@ -146,7 +146,15 @@ get_header(); ?>
                 ?>
                 <div class="backdrop_parallax_background_image show-for-large" style="background-image: url(<?php echo $top_parallax_background_image['url']; ?>)">
                 </div>
-                <div class="menu-button" data-toggle="off-canvas"></div>
+                <div class="menu-button" data-toggle="off-canvas">
+                    <div class="grid-container">
+                        <div class="grid-x">
+                            <div class="cell shrink menu-arrow"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/menu.png"></div>
+                            <div class="cell auto"></div>
+                            <div class="cell shrink menu-logo"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/menu-logo.png"></div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="first-section-mobile hide-for-large">
                     <div class="background-image" style="background-image: url(<?php echo $mobile_first_section_image['url']; ?>)">
@@ -377,7 +385,7 @@ get_header(); ?>
                             </div>
                         </div>
 
-                            <div class="suivant show-for-large animate" style="max-height: 91px; background-image: url(<?php echo $forth_section_suivant_arrow['url'];?>)"></div>
+                        <div class="suivant show-for-large animate" style="max-height: 91px; background-image: url(<?php echo $forth_section_suivant_arrow['url']; ?>)"></div>
 
                         <div class="chart">
                             <div class="chart-circle animate"><img src="<?php echo $forth_section_circular_arrows['url'] ?>"></div>
@@ -414,7 +422,6 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="mobile-seventh-section hide-for-large">

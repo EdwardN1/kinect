@@ -20,7 +20,7 @@ body {
   margin-right: auto;
 }
 
-.menu-button {
+/*.menu-button {
   position: fixed;
   z-index: 100;
   cursor: pointer;
@@ -41,6 +41,48 @@ body {
   @include breakpoint(1600) {
     left: 50%;
     margin-left: -720px;
+  }
+}*/
+
+.menu-button {
+  position: fixed;
+  z-index: 100;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1600px;
+  background-color: rgba(255,255,255,0.85);
+  /*height: 42px;
+  padding-top: 7px;
+  padding-bottom: 7px;*/
+ /* @include breakpoint(430) {
+    height: 9.83vw;
+    padding-top: 1.71vw;
+    padding-bottom: 1.71vw;
+  }
+  @include breakpoint(large) {*/
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /*}*/
+  @include breakpoint(1600) {
+    left: 50%;
+    margin-left: -800px;
+  }
+  img {
+    width: auto;
+    /*max-height: 28px;*/
+    max-height: 40px;
+
+    /*@include breakpoint(430) {
+      max-height: 6.4vw;
+    }
+    @include breakpoint(large) {
+      max-height: 40px;
+    }*/
   }
 }
 
@@ -321,10 +363,13 @@ body {
     .sub-heading {
       color: $white;
       font-weight: $font-thin;
-      font-size: 60px;
       line-height: 1;
       padding-top: 400px;
       display: none;
+      font-size: 55px;
+      @include breakpoint(940) {
+        font-size: 60px;
+      }
     }
   }
 
@@ -357,8 +402,12 @@ body {
       .content, .content p {
         color: $white;
         font-weight: $font-light;
-        font-size: 21px;
-        line-height: 25px;
+        font-size: 19px;
+        line-height: 22px;
+        @include breakpoint(940) {
+          font-size: 21px;
+          line-height: 25px;
+        }
       }
     }
   }
@@ -392,13 +441,16 @@ body {
       margin-right: auto;
 
       .heading {
-        font-size: 60px;
         line-height: 1;
         font-weight: $font-thin;
         color: $dark-blue;
         padding-top: 65px;
         padding-left: 30px;
         display: none;
+        font-size: 55px;
+        @include breakpoint(940) {
+          font-size: 60px;
+        }
       }
 
       .content {
@@ -408,10 +460,14 @@ body {
       }
 
       .content, .content p {
-        font-size: 21px;
         color: $dark-blue;
-        line-height: 1.2;
         font-weight: $font-light;
+        font-size: 19px;
+        line-height: 22px;
+        @include breakpoint(940) {
+          font-size: 21px;
+          line-height: 25px;
+        }
       }
     }
   }
@@ -454,11 +510,14 @@ body {
 
       .heading {
         color: $white;
-        font-size: 60px;
         line-height: 1;
         font-weight: $font-thin;
         padding-top: 65px;
         display: none;
+        font-size: 55px;
+        @include breakpoint(940) {
+          font-size: 60px;
+        }
       }
 
       .content {
@@ -852,9 +911,18 @@ body {
     }
 
     .link-list {
-      margin-left: 300px;
+      margin-left: 140px;
       list-style: none;
       line-height: 15px;
+      @include breakpoint(900) {
+        margin-left: 175px;
+      }
+      @include breakpoint(1000) {
+        margin-left: 250px;
+      }
+      @include breakpoint(1100) {
+        margin-left: 300px;
+      }
 
       li {
         max-width: 256px;
@@ -971,17 +1039,26 @@ body {
         font-weight: $font-thin;
         font-size: 11.875vw;
         line-height: 1;
-        padding-bottom: 8.797vw;
+        padding-bottom: 75vw;
         @include breakpoint(large) {
           padding-bottom: 0;
-          font-size: 60px;
+          font-size: 55px;
           display: none;
+        }
+        @include breakpoint(940) {
+          font-size: 60px;
         }
       }
 
       .frame-4-fade-in-box {
         min-height: 65.19vw;
+        position: absolute;
+        top: 52vw;
+        left: 8vw;
         @include breakpoint(large) {
+          position: relative;
+          top: auto;
+          left: auto;
           min-height: 500px;
         }
       }
@@ -1073,7 +1150,7 @@ body {
 
       .pizza-box {
         position: absolute;
-        left: 22vw;
+        left: 29vw;
         top: 0;
         width: 106.94vw;
         display: block;
