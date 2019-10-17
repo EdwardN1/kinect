@@ -4,6 +4,7 @@
     color: $dark-blue;
     font-weight: $font-thin;
     line-height: 1;
+    text-transform: uppercase;
     @include breakpoint(large) {
       font-size: 60px;
     }
@@ -18,6 +19,14 @@
     display: block;
     @include breakpoint(large) {
       font-size: 21px;
+    }
+  }
+  .animate {
+    .gform_heading {
+      min-height: 233px;
+    }
+    h3.gform_title, span.gform_description {
+      display: none;
     }
   }
   label {
@@ -64,5 +73,11 @@
   }
   .validation_message, .validation_error {
     color: red;
+  }
+}
+
+.mobile-ninth-section {
+  label {
+    font-size: 18px;
   }
 }

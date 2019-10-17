@@ -1,15 +1,19 @@
 .fade-in-up {
-  @include mui-slide(in,  up, $fade: true);
+  @include mui-slide(in,  up, $fade: true, $timing: easeOut, $duration: 0.5s);
 }
 
 .fade-in-down {
-  @include mui-slide(in,  up, $fade: true);
+  @include mui-slide(in,  up, $fade: true, $timing: easeOut, $duration: 0.5s);
 }
 
 .fade-in-left {
-  @include mui-slide(in,  left, $fade: true);
+  @include mui-slide(in,  left, $fade: true, $timing: easeOut, $duration: 0.5s);
 }
 
 .fade-in-right {
-  @include mui-slide(in,  right, $fade: true);
+  @include mui-slide(in,  right, $fade: true, $timing: easeOut, $duration: 0.5s);
+}
+
+.fade-in-slow {
+  @include mui-fade(in, $duration:2s, $timing:easeOut);
 }

@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="off-canvas position-left" id="off-canvas" data-off-canvas data-off-canvas data-transition="overlap">
+<div class="off-canvas position-left" id="off-canvas" data-off-canvas data-off-canvas data-transition="overlap" data-content-overlay="false">
 	<?php /*joints_off_canvas_nav(); */?><!--
 
 	<?php /*if ( is_active_sidebar( 'offcanvas' ) ) : */?>
@@ -16,6 +16,11 @@
 	--><?php /*endif; */?>
     <div class="nav-menu">
         <ul data-magellan>
+            <li class="hide-for-large">
+                <a href="#nav-0" data-toggle="off-canvas">
+                    retour en haut de la page
+                </a>
+            </li>
             <li class="show-for-large">
                 <a href="#nav-1" data-toggle="off-canvas">
                     ON VOUS AIDE À ACHETER<br>
@@ -44,13 +49,13 @@
             </li>
             <li class="show-for-large">
                 <a href="#nav-3" data-toggle="off-canvas">
-                    LORSQUE VOUS COMPRENEZ QUI,<br>
+                    LORSQUE VOUS COMPRENEZ<br> QUI,
                     VOUS COMPRENEZ POURQUO
                 </a>
             </li>
             <li class="hide-for-large">
                 <a href="#nav-3-m" data-toggle="off-canvas">
-                    LORSQUE VOUS COMPRENEZ QUI,<br>
+                    LORSQUE VOUS COMPRENEZ<br> QUI,
                     VOUS COMPRENEZ POURQUO
                 </a>
             </li>
@@ -92,6 +97,9 @@
                 </a>
             </li>
         </ul>
+        <div class="menu-logo">
+            <img src="<?php echo get_template_directory_uri();?>/assets/images/menu-logo.png"/>
+        </div>
         <div class="menu-close" data-toggle="off-canvas"></div>
     </div>
 

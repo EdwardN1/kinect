@@ -15,6 +15,12 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    function fadeInSlow(e) {
+        Foundation.Motion.animateIn($(e), 'fade-in-slow', function () {
+            //window.console.log(e + ' Faded In');
+        });
+    }
+
     function fadeInLeft(e) {
         Foundation.Motion.animateIn($(e), 'fade-in-left', function () {
             //window.console.log(e + ' Faded In');
@@ -65,6 +71,7 @@ jQuery(document).ready(function ($) {
 
 
     //==============================================Splash Screen Animations=================================
+
     setTimeout(function () {
         $('#frame-0 .left-chevron').show();
         slideInRight('#frame-0 .left-chevron');
@@ -89,10 +96,11 @@ jQuery(document).ready(function ($) {
 
     setTimeout(function () {
         fadeInRight('.first-section .frame-animation');
+        slideInRight('.first-section .fly-in-chevron');
         setTimeout(function () {
             fadeIn('.first-section .strap-line');
         }, delay)
-    }, delay);
+    }, delay*2);
 
     $('#first-section-waypoint-1').each(function () {
         var $e = $(this);
@@ -171,6 +179,7 @@ jQuery(document).ready(function ($) {
                     fadeInRight('.forth-section .left .heading.animate')
                     $('.forth-section .fly-in-chevron.animate').removeClass('animate');
                     $('.forth-section .left .heading.animate').removeClass('animate');
+                    $('.forth-section .suivant.animate').removeClass('animate');
 
                     setTimeout(function () {
                         fadeIn('.forth-section .left .frame-4-fade-in-box.animate');
@@ -180,19 +189,19 @@ jQuery(document).ready(function ($) {
                     setTimeout(function () {
                         fadeInLeft('.forth-section .pizza-box.animate');
                         $('.forth-section .pizza-box.animate').removeClass('animate');
-                    }, delay * 2)
+                    }, delay * 1.5)
 
-                    setTimeout(function () {
+                    /*setTimeout(function () {
                         fadeOut('.forth-section .suivant.animate');
                         setTimeout(function () {
                             fadeIn('.forth-section .suivant.animate');
                             $('.forth-section .suivant.animate').removeClass('animate');
                         }, delay)
-                    }, delay * 3);
+                    }, delay * 3);*/
 
-                    setTimeout(function () {
+                    /*setTimeout(function () {
 
-                    }, delay);
+                    }, delay);*/
                 } else {
 
                 }
@@ -348,6 +357,51 @@ jQuery(document).ready(function ($) {
                 setTimeout(function () {
                     fadeIn('.fifth-section .content.animate');
                     $('.fifth-section .content.animate').removeClass('animate');
+                }, delay);
+            } else {
+
+            }
+        }, {
+            offset: 175
+        });
+    });
+
+    //==============================================Sixth Section Animations=================================
+
+    $('.sixth-section').each(function () {
+        var $e = $(this);
+        $e.waypoint(function (direction) {
+            if (direction == 'down') {
+                //window.console.log('Going Down');
+                fadeInRight('.sixth-section .heading.animate');
+                fadeInLeft('.sixth-section .fly-in-chevron.animate');
+                $('.sixth-section .heading.animate').removeClass('animate');
+                $('.sixth-section .chevrons .fly-in-chevron.animate').removeClass('animate');
+                setTimeout(function () {
+                    fadeIn('.sixth-section .sub-heading.animate');
+                    $('.sixth-section .sub-heading.animate').removeClass('animate');
+                    setTimeout(function () {
+                        fadeInRight('.sixth-section .bullets.animate');
+                        $('.sixth-section .bullets').removeClass('animate');
+                    }, delay*0.5)
+                }, delay);
+            } else {
+
+            }
+        }, {
+            offset: 175
+        });
+    });
+
+    $('.sixth-section .bottom').each(function () {
+        var $e = $(this);
+        $e.waypoint(function (direction) {
+            if (direction == 'down') {
+                //window.console.log('Going Down');
+                fadeInRight('.sixth-section .bottom form.animate h3.gform_title');
+                setTimeout(function () {
+                    fadeIn('.sixth-section .bottom form.animate .gform_description');
+                    $('.sixth-section .bottom form.animate').removeClass('animate');
                 }, delay);
             } else {
 
