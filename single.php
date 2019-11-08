@@ -32,8 +32,8 @@ get_header(); ?>
             $seventh_section_link_list = '<ul class="link-list data-magellan">';
             $seventh_section_mobile_link_list ='<ul class="link-list data-magellan">';
             while (have_rows('seventh_section_link_list')) : the_row();
-                $seventh_section_link_list .= '<li><a href="' . get_sub_field('url') . '">' . get_sub_field('link_name') . '</a></li>';
-                $seventh_section_mobile_link_list .= '<li><a href="' . get_sub_field('mobile_url') . '">' . get_sub_field('link_name') . '</a></li>';
+                $seventh_section_link_list .= '<li><a href="/' . get_sub_field('url') . '">' . get_sub_field('link_name') . '</a></li>';
+                $seventh_section_mobile_link_list .= '<li><a href="/' . get_sub_field('mobile_url') . '">' . get_sub_field('link_name') . '</a></li>';
             endwhile;
             $seventh_section_link_list .= '</ul>';
             $seventh_section_mobile_link_list .= '</ul>';
@@ -73,8 +73,8 @@ get_header(); ?>
                         <section class="entry-content white-background" itemprop="text">
                             <header class="single-header">
                                 <div class="grid-container">
-                                    <div class="newsroom"><span class="underline">NEWSROOM</span></div>
-                                    <div class="kinect-procure">KINECT-PROCURE™</div>
+                                    <div class="newsroom">NEWSROOM</div>
+                                    <div class="kinect-procure"><span class="underline">KINECT-PROCURE™</span></div>
                                     <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
                                     <?php get_template_part('parts/content', 'byline'); ?>
                                 </div>

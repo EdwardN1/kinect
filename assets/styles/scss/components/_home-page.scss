@@ -11,33 +11,93 @@ body {
 
 }
 
+h1, h2 {
+  color: $dark-blue;
+  line-height: 1;
+  font-size: 34px;
+  margin-bottom: 1rem;
+  @include breakpoint(large) {
+    font-size: 48px;
+  }
+}
+
+h3 {
+  color: $dark-blue;
+  line-height: 1;
+  font-size: 26px;
+  @include breakpoint(large) {
+    font-size: 30px;
+  }
+}
+
+hr {
+  border-bottom: 1px solid $dark-blue;
+}
+
+.callout {
+  font-weight: $font-bold;
+
+  &.callout-arrow {
+    padding-top: 1.8em;
+    background-image: url(../images/arrow.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+}
+
+p {
+  text-align: justify;
+}
+
 header.single-header, header.archive-header {
-  background-image: url("../images/newsroom-header-background.png");
+  background-image: none;
+  @include breakpoint(large) {
+    background-image: url("../images/newsroom-header-background.png");
+  }
   background-size: contain;
   background-repeat: no-repeat;
-  padding-top: 100px;
   background-position: top right;
-  .newsroom {
+  padding-top: 60px;
+  @include breakpoint(large) {
+    padding-top: 100px;
+  }
+
+  .newsroom, newsroom h1 {
     font-size: 30px;
     font-weight: $font-light;
     color: $dark-blue;
+    line-height: 1.1;
+    text-transform: uppercase;
 
     .underline {
       padding-right: 5em;
       border-bottom: 1px solid #9cc3e3;
     }
   }
+
   .kinect-procure {
     font-size: 30px;
     font-weight: $font-bold;
     color: $dark-blue;
+
+    .underline {
+      border-top: 1px solid #9cc3e3;
+      padding-top: 2px;
+    }
   }
+
   h1.single-title {
-    font-size: 60px;
     font-weight: $font-regular;
     line-height: 1;
     max-width: 840px;
     padding-top: 30px;
+    font-size: 30px;
+    @include breakpoint(medium) {
+      font-size: 40px;
+    }
+    @include breakpoint(large) {
+      font-size: 60px;
+    }
   }
 }
 
@@ -46,6 +106,7 @@ header.archive-header {
     //padding-left: 3em;
     padding-left: 10px;
   }
+
   .kinect-procure {
     //padding-left: 3em;
     padding-left: 10px;
@@ -56,18 +117,21 @@ header.archive-header {
 .archive-grid {
   padding-top: 2em;
   padding-bottom: 2em;
+
   .grid-post {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 1em;
     padding-bottom: 0.5em;
     background-color: $light-gray;
+
     .featured-image {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       height: 200px;
     }
+
     h3.title, h3.title a {
       font-size: 21px;
       line-height: 25px;
@@ -75,12 +139,14 @@ header.archive-header {
       color: $dark-blue;
       padding-top: 1em;
     }
+
     h3.title {
       height: 100px;
       overflow: hidden;
       padding-left: 1em;
       padding-right: 1em;
     }
+
     .byline {
       padding-left: 1em;
       padding-right: 1em;
@@ -90,8 +156,9 @@ header.archive-header {
 
 .single {
   .entry-content {
-      //padding-top: 50px;
+    //padding-top: 50px;
   }
+
   .featured-image {
     height: 40vw;
     width: 100%;
@@ -99,20 +166,39 @@ header.archive-header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
     &.fixBackground {
       //background-attachment: fixed;
     }
   }
+
   .post-content {
     padding-top: 2em;
     padding-bottom: 2em;
+
     p, li {
       line-height: 1.2;
       margin-bottom: 1.2em;
     }
+
     li {
       font-weight: $font-semi-bold;
     }
+  }
+}
+
+.content.main.page {
+  .post-content {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  h3 {
+    padding-top: 1em;
+  }
+
+  p, li {
+    line-height: 1.14;
   }
 }
 
@@ -167,19 +253,19 @@ header.archive-header {
   left: 0;
   width: 100%;
   max-width: 1600px;
-  background-color: rgba(255,255,255,0.85);
+  background-color: rgba(255, 255, 255, 0.85);
   /*height: 42px;
   padding-top: 7px;
   padding-bottom: 7px;*/
- /* @include breakpoint(430) {
-    height: 9.83vw;
-    padding-top: 1.71vw;
-    padding-bottom: 1.71vw;
-  }
-  @include breakpoint(large) {*/
-    height: 50px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+  /* @include breakpoint(430) {
+     height: 9.83vw;
+     padding-top: 1.71vw;
+     padding-bottom: 1.71vw;
+   }
+   @include breakpoint(large) {*/
+  height: 50px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   padding-left: 20px;
   padding-right: 20px;
   /*}*/
@@ -187,6 +273,7 @@ header.archive-header {
     left: 50%;
     margin-left: -800px;
   }
+
   img {
     width: auto;
     /*max-height: 28px;*/
@@ -199,6 +286,7 @@ header.archive-header {
       max-height: 40px;
     }*/
   }
+
   .menu-logo {
     padding-top: 1px;
   }
@@ -467,9 +555,11 @@ header.archive-header {
       margin-right: auto;
       max-width: 100%;
       position: relative;
+
       .frame-animation {
         position: relative;
         display: none;
+
         .heading {
           color: white;
           font-size: 48px;
@@ -533,9 +623,21 @@ header.archive-header {
       max-width: 100vw;
       width: 1600px;
       height: 476px;
+
       .content {
         display: none;
+        max-width: 330px;
+        @include breakpoint(960) {
+          max-width: 380px;
+        }
+        @include breakpoint(1024) {
+          max-width: 400px;
+        }
+        @include breakpoint(1100) {
+          max-width: 450px;
+        }
       }
+
       .content, .content p {
         color: $white;
         font-weight: $font-light;
@@ -635,6 +737,7 @@ header.archive-header {
       width: 100%;
       height: 768px;
       position: relative;
+
       .fly-in-chevron {
         position: absolute;
         background-position: top center;
@@ -660,6 +763,14 @@ header.archive-header {
       .content {
         padding-top: 30px;
         display: none;
+        max-width: 330px;
+        @include breakpoint(1024) {
+          max-width: 420px;
+
+        }
+        @include breakpoint(1100) {
+          max-width: 450px;
+        }
       }
 
       .content, .content p {
@@ -729,6 +840,7 @@ header.archive-header {
       .content {
         padding-top: 30px;
         padding-left: 50%;
+        padding-right: 14%;
         display: none;
       }
 
@@ -737,6 +849,7 @@ header.archive-header {
         font-size: 21px;
         line-height: 1.2;
         font-weight: $font-light;
+        text-align: justify;
       }
     }
   }
@@ -795,6 +908,7 @@ header.archive-header {
     margin-right: auto;
     min-height: 2017px;
     position: relative;
+
     .fly-in-chevron {
       position: absolute;
       top: 0;
@@ -818,21 +932,33 @@ header.archive-header {
         padding-left: 82px;
       }
 
+      .grid-container {
+        padding-right: 0.5em;
+        padding-left: 0.5em;
+      }
+
       .heading {
-        font-size: 60px;
         font-weight: $font-thin;
         color: $dark-blue;
         line-height: 1;
         display: none;
+        font-size: 45px;
+        @include breakpoint(1140) {
+          font-size: 60px;
+        }
+
       }
 
       .sub-heading {
         padding-top: 25px;
-        font-size: 21px;
+        font-size: 18px;
         line-height: 1.2;
         color: $dark-blue;
         font-weight: $font-light;
         display: none;
+        @include breakpoint(1140) {
+          font-size: 21px;
+        }
       }
 
       .bullets, .bullets ul, .bullets ul li {
@@ -843,9 +969,13 @@ header.archive-header {
       }
 
       .bullets {
-        padding-top: 60px;
+        padding-top: 95px;
         display: none;
-
+        font-size: 18px;
+        @include breakpoint(1140) {
+          padding-top: 60px;
+          font-size: 21px;
+        }
         ul {
           list-style: none;
         }
@@ -855,13 +985,18 @@ header.archive-header {
 
           li {
             position: relative;
-            padding-left: 2em;
+            padding-left: 1em;
             margin-bottom: 1em;
             background-image: url("/wp-content/uploads/2019/10/Frame008-Video-Title-Arrow-CROPPED.svg");
             background-repeat: no-repeat;
             background-position: 0 4px;
             background-size: 12px 20px;
             cursor: pointer;
+            font-size: 18px;
+            @include breakpoint(1140) {
+              padding-left: 2em;
+              font-size: 21px;
+            }
 
             /*&:first-child {
               color: $dark-blue;
@@ -921,14 +1056,16 @@ header.archive-header {
       min-height: 768px;
       position: relative;
       padding-top: 60px;
+
       .heading {
         font-size: 60px;
         padding-left: 10px;
         color: $dark-blue;
         font-weight: $font-thin;
       }
+
       .more {
-        .button{
+        .button {
           min-width: 275px;
           font-size: 21px;
           font-weight: $font-light;
@@ -940,6 +1077,7 @@ header.archive-header {
 
     .bottom {
       padding-top: 60px;
+      position: relative;
     }
   }
 }
@@ -979,6 +1117,35 @@ header.archive-header {
         box-shadow: 5px 5px 14px #00719c;
         margin-top: 5.08vw;
       }
+
+      .newsroom {
+        padding-top: 20vw;
+        @include breakpoint(410) {
+          padding-top: 28.60vw;
+        }
+
+        .heading {
+          color: $dark-blue;
+        }
+
+        .archive-grid {
+          padding-top: 0;
+          padding-bottom: 1em;
+
+          .grid-post h3.title {
+            height: 60px;
+            padding-top: 0.5em;
+            @include breakpoint(410) {
+              height: 100px;
+              padding-top: 1em;
+            }
+            a {
+              font-size: 16px;
+              line-height: 1.2;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -1010,6 +1177,7 @@ header.archive-header {
     background-size: 100vw 106.16vw;
     width: 100%;
     height: 106.16vw;
+
     .frame {
       padding-left: 6vw;
       padding-right: 6vw;
@@ -1041,6 +1209,7 @@ header.archive-header {
       .logo {
         padding-top: 6vw;
         padding-bottom: 4vw;
+
         img {
           width: 40vw;
           height: auto;
@@ -1100,20 +1269,20 @@ header.archive-header {
       list-style: none;
       line-height: 15px;
       @include breakpoint(large) {
-        margin-left: 70px;
+        margin-left: 30px;
       }
       @include breakpoint(975) {
-        margin-left: 175px;
+        margin-left: 130px;
       }
       @include breakpoint(1050) {
-        margin-left: 250px;
+        margin-left: 200px;
       }
       @include breakpoint(1100) {
-        margin-left: 300px;
+        margin-left: 230px;
       }
 
       li {
-        max-width: 256px;
+        max-width: 275px;
         border-top: 1px solid $white;
         padding-top: 15px;
         padding-bottom: 15px;
@@ -1128,7 +1297,8 @@ header.archive-header {
           position: relative;
 
           &:hover {
-            color: $dark-blue;
+            color: $white;
+
 
             &:before {
               content: " ";
@@ -1152,7 +1322,11 @@ header.archive-header {
     }
 
     .logo {
-      padding-right: 80px;
+      padding-right: 15px;
+      @include breakpoint(940) {
+        padding-right: 80px;
+      }
+
     }
 
     .footer-text {
@@ -1178,11 +1352,13 @@ header.archive-header {
     height: 433vw;
     padding-top: 13.685vw;
     position: relative;
+
     .fly-in-chevron {
       display: none;
       max-width: 100%;
       height: 0;
     }
+
     @include breakpoint(large) {
       background-size: 1600px 1535px;
       max-width: 1600px;
@@ -1568,8 +1744,8 @@ header.archive-header {
         width: 100%;
         background-size: 1600px 91px;
         display: none;
-       /* margin-left: -55px;
-        margin-top: -22px;*/
+        /* margin-left: -55px;
+         margin-top: -22px;*/
       }
 
     }

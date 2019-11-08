@@ -329,12 +329,22 @@ $buttongroup-radius-on-each: true;
 // 13. Callout
 // -----------
 
-$callout-background: $white;
+/*$callout-background: $white;
 $callout-background-fade: 85%;
 $callout-border: 1px solid rgba($black, 0.25);
 $callout-margin: 0 0 1rem 0;
 $callout-padding: 1rem;
 $callout-font-color: $body-font-color;
+$callout-font-color-alt: $body-background;
+$callout-radius: $global-radius;
+$callout-link-tint: 30%;*/
+
+$callout-background: $white;
+$callout-background-fade: 85%;
+$callout-border: none;
+$callout-margin: 0 0 1rem 0;
+$callout-padding: none;
+$callout-font-color: $dark-blue;
 $callout-font-color-alt: $body-background;
 $callout-radius: $global-radius;
 $callout-link-tint: 30%;
@@ -874,8 +884,8 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 20px,
-  medium: 30px,
+  small: 50px,
+  medium: 100px,
   large: 125px
 );
 $grid-padding-gutters: $grid-margin-gutters;
