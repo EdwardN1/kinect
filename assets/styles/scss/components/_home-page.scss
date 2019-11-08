@@ -434,7 +434,7 @@ header.archive-header {
         position: relative;
         height: 121.016vw;
         background-repeat: no-repeat;
-        background-position: top center;
+        background-position: 2.667vw 0;
         background-size: 100vw 48.876vw;
         padding-top: 13.881vw;
         padding-left: 5.865vw;
@@ -452,6 +452,7 @@ header.archive-header {
           line-height: 1.2;
           color: $dark-blue;
           font-weight: $font-light;
+          max-width: 88vw;
         }
       }
     }
@@ -491,6 +492,7 @@ header.archive-header {
         line-height: 1.2;
         color: $white;
         font-weight: $font-light;
+        max-width: 88vw;
       }
 
     }
@@ -889,6 +891,7 @@ header.archive-header {
       font-weight: $font-light;
       color: $dark-blue;
       line-height: 1.2;
+      max-width: 88vw;
     }
   }
 
